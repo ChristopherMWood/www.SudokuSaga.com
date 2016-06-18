@@ -9,7 +9,8 @@ var runLoop = false;
 var loopFunction;
 var sudokuGrids;
 var loopInterval;
-var loopWaitTime = 500;
+var loopWaitTime = 200;
+var loopIteration = 0;
 
 var placementColor = "#44D518";
 var actionColor = "#E68300";
@@ -33,7 +34,9 @@ $("#run-button").on("click", function() {
 
     try
     {
-        sudokuLoop();
+        loopIteration = 0;
+        loopFunction = function () {sudokuLoop()};
+        loopInterval = setInterval(loopFunction, loopWaitTime);
         //setCookie("sudoku-saved-code", code, 30);
     }
     catch (error)
@@ -44,13 +47,11 @@ $("#run-button").on("click", function() {
 
 function sudokuLoop()
 {
-    while(1 == 1)
-    {
-        iteration();
-        //Check for valid end condition
-    }
-    //var loopFunction = function () {iteration()};
-    //loopInterval = setInterval(loopFunction, loopWaitTime);
+    iteration();
+    loopIteration++;
+
+    if (loopIteration > 50)
+        clearInterval(loopInterval);
 }
 
 function initilizeEmptyBoard() {
