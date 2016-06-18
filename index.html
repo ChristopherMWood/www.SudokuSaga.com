@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sudoku Solver</title>
+        <title>Sudoku Saga</title>
         <link rel="stylesheet" type="text/css" href="styles.css"/>
     </head>
     <body>
-        <div id="sudoku-board">
-            
-        </div>
-        <div id="editor-pane">
-            
+        <nav>
+            <h2>Sudoku Saga</h2>
+        </nav>
+        <div id="sudoku-board"></div>
+        <div id="editor-container">
+            <div id="editor"></div>
+            <button id="run-button">Run Code</button>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="public_api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="api.js" type="text/javascript" charset="utf-8"></script>
+    <div id="customScript"></div>
 </html>
