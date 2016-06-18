@@ -98,20 +98,16 @@ function clearIterationCount()
 
 function loadDefaultTextIntoEditor()
 {
-    var defaultCode = '\n\nfunction iteration()\n{\n\t//Put your code here\n'
-    var randomChoice = Math.floor(Math.random() * (asciiTitles.length));
-
-    defaultCode += '\t//Or ' + asciiTitles[randomChoice] + '\n';
-    defaultCode += '\t//'+ asciiArt[randomChoice] + '\n';
-    defaultCode += '}';
+    var defaultCode = 'var sudoku = (function () {\n\tvar saga = {};\n\n\tsaga.iteration = function () {\n\t\t\n\t};\n\n\treturn saga;\n}());';
 
     editor.setValue(defaultCode, -1);
 }
 
 $("#run-button").on("click", function() {
     var code = $(".ace_content").text();
-    storage = {};
-    $('#customScript').html('<script>' + code + '<\/script>');
+    var cleanCode = removeBreaks(code);
+
+    $('#customScript').html('<script>' + cleanCode + '<\/script>');
 
     try
     {
@@ -131,7 +127,7 @@ $("#run-button").on("click", function() {
 
 function sudokuLoop()
 {
-    iteration();
+    sudoku.iteration();
     incrementIterationCount();
 }
 
@@ -221,3 +217,25 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
+function removeBreaks(stringValue) {
+
+    var noBreaksText = stringValue.replace(/(\r\n|\n|\r)/gm,"<1br />");
+
+    var re1 = /<1br \/><1br \/>/gi;
+    var re1a = /<1br \/><1br \/><1br \/>/gi;
+
+    noBreaksText = noBreaksText.replace(re1," ");
+    noBreaksText = noBreaksText.replace(re1a,"<1br /><2br />");
+    noBreaksText = noBreaksText.replace(re1,"<2br />");
+
+    var re2 = /\<1br \/>/gi;
+    noBreaksText = noBreaksText.replace(re2, " ");
+
+    var re3 = /\s+/g;
+    noBreaksText = noBreaksText.replace(re3," ");
+
+    var re4 = /<2br \/>/gi;
+    noBreaksText = noBreaksText.replace(re4,"\n\n");
+
+    return stringValue;
+}
