@@ -11,10 +11,30 @@
         <div id="page-content">
             <div id="main-content-container">
                 <div id="sudoku-board"></div>
-                <div id="sudoku-controls">
-                    Enable Visualization<input type="checkbox" name="visualization" value="true" checked><br>
-                    Loop Frequency<input type="range" id="loop-frequency" value="250" min="50" max="1000"><span id="frequency-display">250ms</span><br>
-
+                <div id="sudoku-sidepane">
+                    <div class="control-block">
+                        <h3>Controls</h3>
+                        <div class="control-div">
+                            <label>Enable Visualization</label>
+                            <input type="checkbox" name="visualization" value="true" checked/><br>
+                        </div>
+                        <div class="control-div">
+                            <label>Loop Frequency</label>
+                            <input type="range" id="loop-frequency" value="250" min="50" max="1000"/>
+                            <span id="frequency-display">250ms</span><br>
+                        </div>
+                    </div>
+                    <div class="control-block">
+                        <h3>Stats</h3>
+                        <div class="stat-block">
+                            <label>Iteration</label>
+                            <span id="iteration-stat">0</span>
+                        </div>
+                        <div class="stat-block">
+                            <label>Score</label>
+                            <span id="score-stat">0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="editor-container">

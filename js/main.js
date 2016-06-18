@@ -7,7 +7,7 @@ var runLoop = false;
 var loopFunction;
 var sudokuGrids;
 var loopInterval;
-var loopWaitTime = 200;
+var loopWaitTime = 250;
 var loopIteration = 0;
 
 var placementColor = "#44D518";
@@ -41,6 +41,7 @@ $(function() {
 
 $("#loop-frequency").on("change", function() {
     var value = $(this).val();
+    loopWaitTime = value;
     $("#frequency-display").text(value + "ms");
 });
 
@@ -83,6 +84,18 @@ editor.commands.addCommand({
     readOnly: true // false if this command should not apply in readOnly mode
 });
 
+function incrementIterationCount()
+{
+    loopIteration++;
+    $("#iteration-stat").text(loopIteration);
+}
+
+function clearIterationCount()
+{
+    loopIteration = 0;
+    $("#iteration-stat").text(loopIteration);
+}
+
 function loadDefaultTextIntoEditor()
 {
     var defaultCode = '\n\nfunction iteration()\n{\n\t//Put your code here\n'
@@ -103,7 +116,10 @@ $("#run-button").on("click", function() {
     try
     {
         loopIteration = 0;
-        loopFunction = function () {sudokuLoop()};
+        loopFunction = function () {
+            sudokuLoop();
+        };
+
         loopInterval = setInterval(loopFunction, loopWaitTime);
         //setCookie("sudoku-saved-code", code, 30);
     }
@@ -116,10 +132,7 @@ $("#run-button").on("click", function() {
 function sudokuLoop()
 {
     iteration();
-    loopIteration++;
-
-    if (loopIteration > 50)
-        clearInterval(loopInterval);
+    incrementIterationCount();
 }
 
 function initilizeEmptyBoard() {
