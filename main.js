@@ -1,5 +1,5 @@
 var editor = ace.edit("editor");
-var defaultCode = '//Declare any variables or events here\n\nfunction iteration()\n{\n\t//Put your code here\n}';
+var defaultCode = '\n\nfunction iteration()\n{\n\t//Put your code here\n}';
 editor.getSession().setMode("ace/mode/javascript");
 editor.setTheme("ace/theme/twilight");
 editor.setValue(defaultCode, -1);
@@ -47,6 +47,7 @@ function sudokuLoop()
     while(1 == 1)
     {
         iteration();
+        //Check for valid end condition
     }
     //var loopFunction = function () {iteration()};
     //loopInterval = setInterval(loopFunction, loopWaitTime);
