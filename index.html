@@ -2,21 +2,54 @@
 <html>
     <head>
         <title>Sudoku Saga</title>
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     </head>
     <body>
         <nav>
             <h2>Sudoku Saga</h2>
         </nav>
-        <div id="sudoku-board"></div>
-        <div id="editor-container">
-            <div id="editor"></div>
-            <button id="run-button">Run Code</button>
+        <div id="page-content">
+            <div id="main-content-container">
+                <div id="sudoku-board"></div>
+                <div id="sudoku-controls">
+                    Enable Visualization<input type="checkbox" name="visualization" value="true" checked><br>
+                    Loop Frequency<input type="range" id="loop-frequency" value="250" min="50" max="1000"><span id="frequency-display">250ms</span><br>
+
+                </div>
+            </div>
+            <div id="editor-container">
+                <div id="editor-controls">
+                    font:
+                    <select id="editor-font-size-dropdown">
+                        <option value="12pt" selected>12pt</option>
+                        <option value="14pt">14pt</option>
+                        <option value="16pt">16pt</option>
+                        <option value="18pt">18pt</option>
+                        <option value="22pt">22pt</option>
+                    </select>   
+
+                    theme:
+                    <select id="editor-theme-dropdown">
+                        <option value="ambiance">ambiance</option>
+                        <option value="github">github</option>
+                        <option value="monokai">monokai</option>
+                        <option value="terminal">terminal</option>
+                        <option value="twilight" selected>twilight</option>
+                        <option value="vibrant_ink">vibrant_ink</option>
+                        <option value="xcode">xcode</option>
+                    </select>   
+                    large mode:
+                    <input id="large-mode-toggle" type="checkbox" name="large-mode"/>
+                </div>
+                <div id="editor"></div>
+                <button id="run-button">Run Code</button>
+                <button id="clear-editor-button">Clear</button>
+            </div>
         </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="main.js" type="text/javascript" charset="utf-8"></script>
-    <script src="api.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/api.js" type="text/javascript" charset="utf-8"></script>
     <div id="customScript"></div>
 </html>
