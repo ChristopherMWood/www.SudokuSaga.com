@@ -64,11 +64,17 @@ $("#visualization-toggle").on("change", function() {
 $("#large-mode-toggle").on("change", function() {
     if ($(this).is(':checked'))
     {
+        $("#page-content").width(800);
+        $("#main-content-container").width(450);
+        $("#main-content-container").height(300);
         $("#editor").width(800);
         $("#editor").height(600);
     }
     else
     {
+        $("#page-content").width(650);
+        $("#main-content-container").width(650);
+        $("#main-content-container").height(400);
         $("#editor").width(650);
         $("#editor").height(400);
     }
@@ -104,7 +110,7 @@ function loadDefaultTextIntoEditor()
 }
 
 $("#run-button").on("click", function() {
-    var code = $(".ace_content").text();
+    var code = editor.getSession().getValue();
     var cleanCode = removeBreaks(code);
 
     $('#customScript').html('<script>' + cleanCode + '<\/script>');
@@ -237,5 +243,6 @@ function removeBreaks(stringValue) {
     var re4 = /<2br \/>/gi;
     noBreaksText = noBreaksText.replace(re4,"\n\n");
 
+    stringValue = stringValue.replace(/\s\s+/g, ' ');
     return stringValue;
 }

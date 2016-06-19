@@ -2,16 +2,18 @@
 <html>
     <head>
         <title>Sudoku Saga</title>
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
         <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     </head>
     <body>
         <nav>
             <h2>Sudoku Saga</h2>
+            <a href="documentation.html" target="_blank" class="nav-link"><div>Documentation</div></a>
         </nav>
         <div id="page-content">
             <div id="main-content-container">
-                <div id="sudoku-board"></div>
-                <div id="sudoku-sidepane">
+                <div id="sudoku-board" class="main-content"></div>
+                <div id="sudoku-sidepane" class="main-content">
                     <div class="control-block">
                         <h3>Controls</h3>
                         <div class="control-div">
@@ -39,33 +41,39 @@
             </div>
             <div id="editor-container">
                 <div id="editor-controls">
-                    font:
-                    <select id="editor-font-size-dropdown">
-                        <option value="12pt" selected>12pt</option>
-                        <option value="14pt">14pt</option>
-                        <option value="16pt">16pt</option>
-                        <option value="18pt">18pt</option>
-                        <option value="22pt">22pt</option>
-                    </select>   
-
-                    theme:
-                    <select id="editor-theme-dropdown">
-                        <option value="ambiance">ambiance</option>
-                        <option value="github">github</option>
-                        <option value="monokai">monokai</option>
-                        <option value="terminal">terminal</option>
-                        <option value="twilight" selected>twilight</option>
-                        <option value="vibrant_ink">vibrant_ink</option>
-                        <option value="xcode">xcode</option>
-                    </select>   
-                    large mode:
-                    <input id="large-mode-toggle" type="checkbox" name="large-mode"/>
+                    <div class="editor-control left">
+                        <label>font:</label>
+                        <select id="editor-font-size-dropdown">
+                            <option value="12pt" selected>12pt</option>
+                            <option value="14pt">14pt</option>
+                            <option value="16pt">16pt</option>
+                            <option value="18pt">18pt</option>
+                            <option value="22pt">22pt</option>
+                        </select>   
+                    </div>
+                    <div class="editor-control left">
+                        <label>theme:</label>
+                        <select id="editor-theme-dropdown">
+                            <option value="ambiance">ambiance</option>
+                            <option value="github">github</option>
+                            <option value="monokai">monokai</option>
+                            <option value="terminal">terminal</option>
+                            <option value="twilight" selected>twilight</option>
+                            <option value="vibrant_ink">vibrant_ink</option>
+                            <option value="xcode">xcode</option>
+                        </select>   
+                    </div>
+                    <div class="editor-control right">
+                        <label>large mode:</label>
+                        <input id="large-mode-toggle" type="checkbox" name="large-mode"/>
+                    </div>
                 </div>
                 <div id="editor"></div>
-                <button id="run-button">Run Code</button>
+                <button id="run-button" class="submit-button">Run Code</button>
                 <button id="clear-editor-button">Clear</button>
             </div>
         </div>
+
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>

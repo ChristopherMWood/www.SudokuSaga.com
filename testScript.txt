@@ -49,10 +49,3 @@ var sudoku = (function () {
 
 	return saga;
 }());
-
-function iteration()
-{
-    checkCellForMatch(x, y);
-	x++;
-	y++;
-}
