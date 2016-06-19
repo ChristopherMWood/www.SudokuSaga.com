@@ -1,0 +1,58 @@
+var sudoku = (function () {
+	var saga = {};
+
+    saga.x = 0;
+    saga.y = 0;
+
+	saga.iteration = function () {
+	    saga.checkCellForMatch(saga.x, saga.y++);
+    	
+    	if (saga.y == 9)
+    	{
+    	    saga.x++;
+    	    saga.y = 0;
+    	}
+    	
+    	if (saga.x == 9)
+    	{
+    	    saga.x = 0;
+    	}
+	};
+    
+    saga.checkCellForMatch= function (row, column)
+    {
+        var cellValue = getCellValue(row, column);
+        if (cellValue !== null)
+        {
+            var i = 0;
+            while(i < 10)
+            {
+                saga.isOnlyCellOption(row, column, i);
+                i++;
+            }
+        }
+    };
+    
+    saga.isOnlyCellOption = function (row, column, value)
+    {
+        if (row > 0 && row < 8 && column > 0 && column < 8 &&
+            isValueInRow(value, row - 1) &&
+            isValueInRow(value, row + 1) &&
+            !isValueInRow(value, row) &&
+            isValueInColumn(value, column - 1) &&
+            isValueInColumn(value, column + 1) &&
+            !isValueInColumn(value, column))
+            {
+                setCellValue(row, column, value);
+            }
+    };
+
+	return saga;
+}());
+
+function iteration()
+{
+    checkCellForMatch(x, y);
+	x++;
+	y++;
+}
