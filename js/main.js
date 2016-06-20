@@ -39,30 +39,6 @@ $(function() {
     initilizeEmptyBoard();
 });
 
-$("#loop-frequency").on("change", function() {
-    settings.setIterationFrequency($(this).val());
-});
-
-$("#clear-editor-button").on("click", function() {
-    loadDefaultTextIntoEditor();
-});
-
-$("#editor-font-size-dropdown").on("change", function() {
-    settings.setEditorFontSize($(this).val());
-});
-
-$("#editor-theme-dropdown").on("change", function() {
-    settings.setEditorTheme($(this).val());
-});
-
-$("#visualization-toggle").on("change", function() {
-    settings.enableAlgorithmVisualization($(this).is(':checked'));
-});
-
-$("#large-mode-toggle").on("change", function() {
-    settings.setEditorInLargeMode($(this).is(':checked'));
-});
-
 editor.commands.addCommand({
     name: 'saveCode',
     bindKey: {win: 'Ctrl-S',  mac: 'Command-S'},
@@ -92,6 +68,7 @@ function loadDefaultTextIntoEditor()
 }
 
 $("#run-button").on("click", function() {
+    alert("TEST");
     var code = editor.getSession().getValue();
     var cleanCode = removeBreaks(code);
 
@@ -210,3 +187,27 @@ function removeBreaks(stringValue) {
     stringValue = stringValue.replace(/\s\s+/g, ' ');
     return stringValue;
 }
+
+$("#loop-frequency").on("change", function() {
+    settings.setIterationFrequency($(this).val());
+});
+
+$("#clear-editor-button").on("click", function() {
+    loadDefaultTextIntoEditor();
+});
+
+$("#editor-font-size-dropdown").on("change", function() {
+    settings.setEditorFontSize($(this).val());
+});
+
+$("#editor-theme-dropdown").on("change", function() {
+    settings.setEditorTheme($(this).val());
+});
+
+$("#visualization-toggle").on("change", function() {
+    settings.enableAlgorithmVisualization($(this).is(':checked'));
+});
+
+$("#large-mode-toggle").on("change", function() {
+    settings.setEditorInLargeMode($(this).is(':checked'));
+});
