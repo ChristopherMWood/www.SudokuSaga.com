@@ -185,6 +185,7 @@ function removeBreaks(stringValue) {
     noBreaksText = noBreaksText.replace(re4,"\n\n");
 
     stringValue = stringValue.replace(/\s\s+/g, ' ');
+    //stringValue = stringValue.replace(/(\\\/\\*[\\w\\\'\\s\\r\\n\\*]*\\*\\\/)|(\\\/\\\/[\\w\\s\\\']*)|(\\<![\\-\\-\\s\\w\\>\\\/]*\\>)/, '');
     return stringValue;
 }
 
