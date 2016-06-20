@@ -30,6 +30,21 @@ var easy8 = [[1, null, null],[null, 6, 5],[9, 7, null]];
 var easy9 = [[4, 7, null],[null, 9, null],[null, null, null]];
 var easyBoard = [[easy1, easy2, easy3],[easy4, easy5, easy6],[easy7, easy8, easy9]];
 
+var app = angular.module("sudokuSaga", []); 
+
+app.controller("statisticsController", function($scope) {
+    $scope.iteration = 3;
+    $scope.score = 6;
+
+    $scope.updateScore = function(value) {
+        $scope.score += value;
+    };
+
+    $scope.incrementIteration = function() {
+        $scope.iteration++;
+    };
+});
+
 $(function() {
     //var savedCode = getCookie("sudoku-saved-code");
     //if (savedCode != null)

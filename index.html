@@ -5,7 +5,7 @@
         <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
         <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     </head>
-    <body>
+    <body ng-app="sudokuSaga" ng-cloak>
         <nav>
             <h2>Sudoku Saga</h2>
             <a href="documentation.html" target="_blank" class="nav-link"><div>Documentation</div></a>
@@ -26,15 +26,15 @@
                             <span id="frequency-display">250ms</span><br>
                         </div>
                     </div>
-                    <div class="control-block">
+                    <div class="control-block" ng-controller="statisticsController">
                         <h3>Stats</h3>
                         <div class="stat-block">
                             <label>Iteration</label>
-                            <span id="iteration-stat">0</span>
+                            <span id="iteration-stat">{{iteration}}</span>
                         </div>
                         <div class="stat-block">
                             <label>Score</label>
-                            <span id="score-stat">0</span>
+                            <span id="score-stat">{{score}}</span>
                         </div>
                     </div>
                 </div>
