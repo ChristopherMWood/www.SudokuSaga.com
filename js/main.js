@@ -40,9 +40,7 @@ $(function() {
 });
 
 $("#loop-frequency").on("change", function() {
-    var value = $(this).val();
-    loopWaitTime = value;
-    $("#frequency-display").text(value + "ms");
+    settings.setIterationFrequency($(this).val());
 });
 
 $("#clear-editor-button").on("click", function() {
@@ -50,35 +48,19 @@ $("#clear-editor-button").on("click", function() {
 });
 
 $("#editor-font-size-dropdown").on("change", function() {
-    $("#editor").css("font-size", $(this).val());
+    settings.setEditorFontSize($(this).val());
 });
 
 $("#editor-theme-dropdown").on("change", function() {
-    editor.setTheme("ace/theme/" + $(this).val());
+    settings.setEditorTheme($(this).val());
 });
 
 $("#visualization-toggle").on("change", function() {
-    algorithmVisualizationEnabled = $(this).is(':checked');
+    settings.enableAlgorithmVisualization($(this).is(':checked'));
 });
 
 $("#large-mode-toggle").on("change", function() {
-    if ($(this).is(':checked'))
-    {
-        $("#page-content").width(800);
-        $("#main-content-container").width(450);
-        $("#main-content-container").height(300);
-        $("#editor").width(800);
-        $("#editor").height(600);
-    }
-    else
-    {
-        $("#page-content").width(650);
-        $("#main-content-container").width(650);
-        $("#main-content-container").height(400);
-        $("#editor").width(650);
-        $("#editor").height(400);
-    }
-    editor.resize()
+    settings.setEditorInLargeMode($(this).is(':checked'));
 });
 
 editor.commands.addCommand({
@@ -203,24 +185,6 @@ function ValidateInput(value) {
 function clearAllHighlightsToDefaults() {
     $(".grid").css("background-color", "white");
     $(".cell").css("background-color", "transparent");
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    }
-    return "";
-}
-
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "max-age="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
 function removeBreaks(stringValue) {

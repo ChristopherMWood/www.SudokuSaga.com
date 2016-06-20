@@ -200,3 +200,136 @@ nav h2
 {
     float: left;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #chatroom-maker-container {
+      width: 600px;
+      margin: 300px auto 0 auto;
+  }
+  
+  #logo {
+      width: 100%;
+      
+  }
+  
+  #chatroom-name-input {
+      padding-left: 10px;
+      height: 35px;
+      font-size: 18pt;
+      width: 74%;
+  }
+  
+  #chatroom-create-button {
+      width: 25%;
+      height: 35px;
+      margin-left: -5px;
+      border: none;
+      background-color: #92D050;
+      color: white;
+      font-weight: 900;
+      position: relative;
+      top: -2px;
+  }
+  
+  #chat-bar {
+      height: 300px;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+  }
+  
+  .chat-window {
+      border: solid 1px black;
+      width: 250px;
+      height: 100%;
+      bottom: 0px;
+      margin-right: 10px;
+      position: relative;
+      float: right;
+  }
+  
+  .chat-header {
+      height: 10%;
+      border-bottom: solid 1px black;
+      font-size: 22px;
+      color: black;
+      font-weight: 400;
+  }
+  
+  .chat-title {
+      padding-left: 5px;
+      overflow: hidden;
+      width: 85%;
+      height: 100%;
+  }
+  
+  .chat-close {
+      width: 14%;
+      height: 100%;
+      font-weight: bold;
+      display: block;
+      float: right;
+      text-align: center;
+      font-size: 30px;
+      cursor: pointer;
+  }
+  
+  .chat-body {
+      height: 80%;
+      background-color: whitesmoke;
+      overflow-y: auto;
+  }
+  
+  .chat-controls {
+      width: 100%;
+      height: 9%;
+      border-top: solid 1px black;
+  }
+  
+  .chat-input {
+      height: 100%;
+      width: 75%;
+      padding: 5px;
+      border: none;
+  }
+  
+  .chat-send-button {
+      width: 25%;
+      background-color: #a0c974;
+      color: white;
+      border: none;
+      height: 100%;
+  }
+  
+  .local-message {
+      border-left: solid 6px #a0c974;
+      margin-bottom: 5px;
+      float: left;
+      width: 65%;
+      padding: 5px;
+      border-bottom: solid 1px white;
+  }
+  
+  .external-message {
+      border-right: solid 6px #36C3E0;
+      margin-bottom: 5px;
+      float: right;
+      width: 65%;
+      padding: 5px;
+  }
