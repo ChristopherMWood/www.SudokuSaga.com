@@ -1,0 +1,152 @@
+html body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #0f1418;
+}
+
+#sudoku-board
+{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    order: 1;
+    position: absolute;
+    text-align: center;
+    backround-color: white;
+}
+
+.grid
+{
+    margin: 0;
+    padding: 0;
+    height: 33%;
+    width: 33%;
+    background-color: white;
+    outline: solid 2px black;
+    display: inline-block;
+}
+
+.cell
+{
+    margin: 0;
+    padding: 0;
+    height: 33%;
+    width: 33%;
+    outline: solid 1px black;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#page-content {
+    background-color: #36C3E0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    min-height: 650px;
+    overflow-x: hidden;
+}
+
+#content-container {
+    display: flex;
+    flex-flow: column;
+    background-color: darkorange;
+    width: 35%;
+    min-width: 400px;
+}
+
+#sudoku-board-container {
+    width: 100%;
+    height: 0px;
+    padding-bottom: 100%;
+    background-color: darkred;
+    min-width: 400px;
+}
+
+.square-content {
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#saga-controls-container {
+    background-color: purple;
+    flex: 2;
+}
+
+#editor-container {
+    height: 100%;
+    width: 65%;
+    display: flex;
+    background-color: #4CAF50;
+    border-left: solid 3px black;
+    justify-content: flex-end;
+}
+
+#editor
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 12pt;
+}
+
+.no-pad {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1000px) {
+
+    #page-content {
+        flex-direction: column;
+    }
+
+    #sudoku-board-container {
+        padding-bottom: 0;
+        background-color: darkred;
+        height: 100%;
+        width: 400px;
+    }
+
+    #content-container {
+        display: flex;
+        background-color: darkorange;
+        border-bottom: solid 3px black;
+        width: 100%;
+        height: 400px;
+        min-width: 800px;
+        min-height: 400px;
+    }
+
+    .square-content {
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+    #editor-container {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        background-color: #4CAF50;
+        justify-content: flex-end;
+        border-left: none;
+    }
+
+}
