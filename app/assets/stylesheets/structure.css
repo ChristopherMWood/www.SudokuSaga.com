@@ -59,7 +59,7 @@ html body {
 #content-container {
     display: flex;
     flex-flow: column;
-    background-color: darkorange;
+    background-color: #0f1418;
     width: 35%;
     min-width: 400px;
 }
@@ -68,7 +68,7 @@ html body {
     width: 100%;
     height: 0px;
     padding-bottom: 100%;
-    background-color: darkred;
+    background-color: #0f1418;
     min-width: 400px;
 }
 
@@ -92,7 +92,7 @@ html body {
     height: 100%;
     width: 65%;
     display: flex;
-    background-color: #4CAF50;
+    background-color: #0f1418;
     border-left: solid 3px black;
     justify-content: flex-end;
 }
