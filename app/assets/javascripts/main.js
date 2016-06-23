@@ -129,6 +129,9 @@ function sudokuLoop()
     incrementIterationCount();
 }
 
+var rowClass = ["row0", "row1", "row2", "row3", "row4", "row5", "row6", "row7", "row8"];
+var columnClass = ["column0", "column1", "column2", "column3", "column4", "column5", "column6", "column7", "column8"];
+
 function initilizeEmptyBoard() {
     
     var markup = '';
@@ -137,7 +140,7 @@ function initilizeEmptyBoard() {
     {
         for(var column = 0; column < 3; column++)
         {
-            markup += '<div id="grid-' + row + '-' + column + '" class="grid">';
+            markup += '<div id="grid-' + row + '-' + column + '" class="grid gridRow' + row + ' gridColumn' + column + '">';
             sudokuGrids[row][column] = generateNullArray();
             
             for (var cell_row = 0 + (3 * row), i = 0; cell_row < 3 + (3 * row); cell_row++, i++)
@@ -163,7 +166,7 @@ function setupSudokuGridArray()
 {
     sudokuGrids = new Array(3);
     for (var i = 0; i < 3; i++)
-        sudokuGrids[i] = new Array(3)
+        sudokuGrids[i] = new Array(3);
 }
 
 function createCellMarkup(row, column, value)
@@ -171,7 +174,7 @@ function createCellMarkup(row, column, value)
     if (value == null)
         value = '';
 
-    return '<div id="cell-' + row + '-' + column + '" class="cell">' + value + '</div>'
+    return '<div id="cell-' + row + '-' + column + '" class="cell ' + "row" + row + ' column' + column + '">' + value + '</div>'
 }
 
 function generateNullArray()

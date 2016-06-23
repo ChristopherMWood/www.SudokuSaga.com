@@ -1,13 +1,18 @@
 <%= stylesheet_link_tag 'structure' %>
 <html>
-  <body>
+  <body ng-app="sudokuSaga" ng-cloak>
     <div id="page-content">
       <div id="content-container" class="no-pad">
         <div id="sudoku-board-container" class="square-content">
           <div id="sudoku-board"></div>
         </div>
         <div id="saga-controls-container">
-          <!--<div id="direct-controls"></div>-->
+          <div id="direct-controls">
+            <%= image_tag('step', class: 'control-icon right') %>
+            <%= image_tag('play', class: 'control-icon right') %>
+            <%= image_tag('pause', class: 'control-icon right') %>
+            <%= image_tag('refresh', class: 'control-icon left') %>
+          </div>
         </div>
       </div>
       <div id="editor-container" class="no-pad">

@@ -104,6 +104,12 @@ html body {
     background-color: red;
 }
 
+.control-icon {
+    height: 30px;
+    padding-top: 5px;
+    margin-left: 5px;
+}
+
 .control-block
 {
     height: 50%;

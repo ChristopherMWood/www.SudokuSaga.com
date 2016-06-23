@@ -1,5 +1,13 @@
 var visualizationTime = 200;
 
+var gridService;
+
+$(function () {
+    var injector = angular.element(document.querySelector('[ng-app]')).injector();
+    gridService = injector.get('gridService');
+    gridService.initilizeGrids(easyBoard);
+});
+
 function getCellValue(row, column) {
     ValidateInput(row);
     ValidateInput(column);
@@ -9,9 +17,8 @@ function getCellValue(row, column) {
 
     if (algorithmVisualizationEnabled)
         $(cell).css("background-color", actionColor).delay(visualizationTime);
-    
-    var grid = sudokuGrids[Math.floor(row/3)][Math.floor(column/3)];
-    return grid[Math.floor(row % 3)][Math.floor(column % 3)];
+
+    return gridService.getCell(row, column);
 }
 
 function getGrid(row, column) {
@@ -22,23 +29,23 @@ function getGrid(row, column) {
     if (algorithmVisualizationEnabled)
         $("#grid-" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
 
-    return sudokuGrids[row][column];
+    return gridService.getGrid(row, column);
 }
 
 function getRow(row) {
     ValidateInput(row);
     clearAllHighlightsToDefaults();
-    
+
     var rowArray = new Array(9);
     for (var i = 0; i < 9; i++)
     {
-        var grid = sudokuGrids[Math.floor(row/3)][Math.floor(i/3)];
+        var grid = gridService.getGrid(Math.floor(row/3), Math.floor(i/3));
         rowArray[i] = grid[Math.floor(row%3)][Math.floor(i%3)];
 
         if (algorithmVisualizationEnabled)
-            $("#cell-" + row + '-' + i).css("background-color", actionColor).delay(visualizationTime);
+            $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
     }
-    
+
     return rowArray;
 }
 
@@ -49,12 +56,12 @@ function getColumn(column) {
     var columnArray = new Array(9);
     for (var i = 0; i < 9; i++)
     {
-        var grid = sudokuGrids[Math.floor(i/3)][Math.floor(column/3)];
-        columnArray[i] = grid[Math.floor(i%3)][Math.floor(column%3)];
-
-        if (algorithmVisualizationEnabled)
-            $("#cell-" + i + '-' + column).css("background-color", actionColor).delay(visualizationTime);
+        var grid = gridService.getGrid(Math.floor(i / 3), Math.floor(column / 3));
+        columnArray[i] = grid[Math.floor(i % 3)][Math.floor(column % 3)];
     }
+
+    if (algorithmVisualizationEnabled)
+        $(".column" + column).css("background-color", actionColor).delay(visualizationTime);
     
     return columnArray;
 }
@@ -69,7 +76,7 @@ function clearCell(row, column) {
     if (algorithmVisualizationEnabled)
         $(cell).css("background-color", errorColor).delay(visualizationTime);
 
-    $(cell).text("");
+    //$(cell).("");
 }
 
 function setCellValue(row, column, value) {
@@ -84,7 +91,7 @@ function setCellValue(row, column, value) {
     if (algorithmVisualizationEnabled)
         $(cell).css("background-color", placementColor).delay(visualizationTime);
 
-    var grid = sudokuGrids[Math.floor(row/3)][Math.floor(column/3)];
+    var grid = gridService(Math.floor(row/3), Math.floor(i/3));
     grid[Math.floor(row % 3)][Math.floor(column % 3)] = value;
 }
 
@@ -96,7 +103,7 @@ function isValueInRow(value, row) {
     var found = false;
     for (var i = 0; i < 9; i++)
     {
-        var grid = sudokuGrids[Math.floor(row/3)][Math.floor(i/3)];
+        var grid = gridService(Math.floor(row/3), Math.floor(i/3));
 
         if (algorithmVisualizationEnabled)
             $("#cell-" + row + '-' + i).css("background-color", actionColor).delay(visualizationTime);
@@ -116,7 +123,7 @@ function isValueInColumn(value, column) {
     var found = false;
     for (var i = 0; i < 9; i++)
     {
-        var grid = sudokuGrids[Math.floor(i/3)][Math.floor(column/3)];
+        var grid = gridService(Math.floor(column / 3), Math.floor(i / 3));
 
         if (algorithmVisualizationEnabled)
             $("#cell-" + i + '-' + column).css("background-color", actionColor).delay(visualizationTime);
