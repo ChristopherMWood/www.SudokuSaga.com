@@ -58,7 +58,25 @@ editor.commands.addCommand({
     name: 'saveCode',
     bindKey: {win: 'Ctrl-S',  mac: 'Command-S'},
     exec: function(editor) {
-        alert("Code Saved (change format)");
+        $.ambiance({message: "Code Saved"});
+    },
+    readOnly: true // false if this command should not apply in readOnly mode
+});
+
+editor.commands.addCommand({
+    name: 'saveCode',
+    bindKey: {win: 'Ctrl--',  mac: 'Command-S'},
+    exec: function(editor) {
+        alert("decreased");
+    },
+    readOnly: true // false if this command should not apply in readOnly mode
+});
+
+editor.commands.addCommand({
+    name: 'saveCode',
+    bindKey: {win: 'Ctrl-+',  mac: 'Command-S'},
+    exec: function(editor) {
+        alert("increased");
     },
     readOnly: true // false if this command should not apply in readOnly mode
 });

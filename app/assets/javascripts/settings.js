@@ -31,26 +31,6 @@ var settings = (function () {
 		editor.setTheme("ace/theme/" + theme);
 	};
 
-	settings.setEditorInLargeMode = function (enable) {
-	    if (enable)
-	    {
-	        $("#page-content").width(800);
-	        $("#main-content-container").width(450);
-	        $("#main-content-container").height(300);
-	        $("#editor").width(800);
-	        $("#editor").height(600);
-	    }
-	    else
-	    {
-	        $("#page-content").width(650);
-	        $("#main-content-container").width(650);
-	        $("#main-content-container").height(400);
-	        $("#editor").width(650);
-	        $("#editor").height(400);
-	    }
-	    editor.resize();
-	};
-
 	settings.saveAllSettingsToCookie = function () {
 		if (navigator.cookieEnabled)
 		{

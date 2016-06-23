@@ -6,9 +6,35 @@
         <div id="sudoku-board-container" class="square-content">
           <div id="sudoku-board"></div>
         </div>
-        <div id="saga-controls-container"></div>
+        <div id="saga-controls-container">
+          <!--<div id="direct-controls"></div>-->
+        </div>
       </div>
       <div id="editor-container" class="no-pad">
+        <div id="editor-controls">
+          <div class="editor-control left">
+            <label>font:</label>
+            <select id="editor-font-size-dropdown">
+              <option value="12pt" selected>12pt</option>
+              <option value="14pt">14pt</option>
+              <option value="16pt">16pt</option>
+              <option value="18pt">18pt</option>
+              <option value="22pt">22pt</option>
+            </select>
+          </div>
+          <div class="editor-control left">
+            <label>theme:</label>
+            <select id="editor-theme-dropdown">
+              <option value="ambiance">ambiance</option>
+              <option value="github">github</option>
+              <option value="monokai">monokai</option>
+              <option value="terminal">terminal</option>
+              <option value="twilight" selected>twilight</option>
+              <option value="vibrant_ink">vibrant_ink</option>
+              <option value="xcode">xcode</option>
+            </select>
+          </div>
+        </div>
         <div id="editor"></div>
       </div>
     </div>
