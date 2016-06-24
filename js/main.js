@@ -248,20 +248,30 @@ function sudokuLoop()
 }
 
 function checkForWin() {
-    if (filledInCells >= 81 && validateBoard())
+    if (filledInCells >= 81)
     {
         pauseSudoku($("#action-button"));
 
-        $.ambiance({
-            message: "GAME WON",
-            type: "success",
-            timeout: 100
-        });
+        if (validateBoard())
+        {
+            $.ambiance({
+                message: "GAME WON",
+                type: "success",
+                timeout: 100
+            });
+        }
+        else {
+            $.ambiance({
+                message: "GAME LOST",
+                type: "error",
+                timeout: 100
+            });
+        }
     }
 }
 
 function validateBoard() {
-
+    
 }
 
 var rowClass = ["row0", "row1", "row2", "row3", "row4", "row5", "row6", "row7", "row8"];

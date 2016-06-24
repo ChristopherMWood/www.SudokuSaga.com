@@ -6,17 +6,17 @@ var settings = (function () {
 	settings.loadAllSettingsFromCookie = function () {
 		if (navigator.cookieEnabled)
 		{
-            // var iteration = settings.getCookie("iterationSpeed");
-            // if (iteration != null && iteration != 250)
-            //     iterationSpeed = iteration;
-            //
-            // var visualization = settings.getCookie("algorithmVisualization");
-            // if (visualization != null && visualization != algorithmVisualization)
-            //     algorithmVisualization = visualization;
-            //
-            // var code = settings.getCookie("javascriptCode");
-            // if (code != null && code.length > 0)
-            //     editor.setValue(code, -1);
+            var iteration = settings.getCookie("iterationSpeed");
+            if (iteration != null && iteration != 250)
+                iterationSpeed = iteration;
+            
+            var visualization = settings.getCookie("algorithmVisualization");
+            if (visualization != null && visualization != algorithmVisualization)
+                algorithmVisualization = visualization;
+            
+            var code = settings.getCookie("javascriptCode");
+            if (code != null && code.length > 0)
+                 editor.setValue(code, -1);
 		}
 		else
 		{
@@ -52,9 +52,9 @@ var settings = (function () {
 	settings.saveAllSettingsToCookie = function () {
 		if (navigator.cookieEnabled)
 		{
-            // settings.setCookie("iterationSpeed", iterationSpeed, 999);
-            // settings.setCookie("algorithmVisualization", algorithmVisualization, 999);
-            // settings.setCookie("javascriptCode", editor.getSession().getValue(), 999);
+            settings.setCookie("iterationSpeed", iterationSpeed, 999);
+            settings.setCookie("algorithmVisualization", algorithmVisualization, 999);
+            settings.setCookie("javascriptCode", editor.getSession().getValue(), 999);
 		}
 		else
 		{
@@ -68,7 +68,7 @@ var settings = (function () {
 	    for(var i=0; i<ca.length; i++) {
 	        var c = ca[i];
 	        while (c.charAt(0)==' ') c = c.substring(1);
-	        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	        if (c.indexOf(name) == 0) return decodeURIComponent(c.substring(name.length,c.length));
 	    }
 	    return "";
 	};
@@ -77,7 +77,7 @@ var settings = (function () {
 	    var d = new Date();
 	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	    var expires = "max-age="+d.toUTCString();
-	    document.cookie = cname + "=" + cvalue + "; " + expires;
+	    document.cookie = cname + "=" + encodeURIComponent(cvalue) + "; " + expires;
 	};
 
 	return settings;

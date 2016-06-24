@@ -91,11 +91,11 @@ html body {
 }
 
 #refresh-button {
-    background-image: url('refresh.png');
+    background-image: url('../images/refresh.png');
 }
 
 #step-button {
-    background-image: url('step.png');
+    background-image: url('../images/step.png');
 }
 
 .sudoku-button {
@@ -106,11 +106,11 @@ html body {
 }
 
 .play-image {
-    background-image: url('play.png');
+    background-image: url('../images/play.png');
 }
 
 .pause-image {
-    background-image: url('pause.png');
+    background-image: url('../images/pause.png');
 }
 
 #editor-controls
