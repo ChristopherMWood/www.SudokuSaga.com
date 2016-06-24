@@ -14460,3 +14460,153 @@ Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 07:56:59 -0400
 
 
 Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 07:56:59 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 07:58:25 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (1.0ms)
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/ambiance.jquery.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/api.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/chatroom.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/main.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/settings.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/sudokuService.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/stylesheets/ambiance.jquery.css
+including asset: /home/christopher/dev/sudokusaga/app/assets/stylesheets/structure.css
+excluding asset: /var/lib/gems/2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts/turbolinks.js.coffee
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery.min.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery2.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery2.min.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery_ujs.js
+excluding asset: /var/lib/gems/2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts/coffee-script.js.erb
+Completed 200 OK in 322ms (Views: 314.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/main.self-25970bc42285f4e139e6c5e865bf609f26de0da8653c550a88d50ad2638968e5.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/api.self-ba28ddb8d21487502a61753130e4dd26116f8a7f3f055e90fc728177c0e2ac3a.js?body=1" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/refresh.png" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 07:58:26 -0400
+
+
+Started GET "/documentation" for 127.0.0.1 at 2016-06-24 07:58:29 -0400
+Processing by SudokuController#documentation as HTML
+  Rendered sudoku/documentation.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/documentation" for 127.0.0.1 at 2016-06-24 08:00:40 -0400
+Processing by SudokuController#documentation as HTML
+  Rendered sudoku/documentation.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/main.self-25970bc42285f4e139e6c5e865bf609f26de0da8653c550a88d50ad2638968e5.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/api.self-ba28ddb8d21487502a61753130e4dd26116f8a7f3f055e90fc728177c0e2ac3a.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:41 -0400
+
+
+Started GET "/documentation" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+Processing by SudokuController#documentation as HTML
+  Rendered sudoku/documentation.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/api.self-ba28ddb8d21487502a61753130e4dd26116f8a7f3f055e90fc728177c0e2ac3a.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/main.self-25970bc42285f4e139e6c5e865bf609f26de0da8653c550a88d50ad2638968e5.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:54 -0400
+
+
+Started GET "/documentation" for 127.0.0.1 at 2016-06-24 08:00:58 -0400
+Processing by SudokuController#documentation as HTML
+  Rendered sudoku/documentation.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 20.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/main.self-25970bc42285f4e139e6c5e865bf609f26de0da8653c550a88d50ad2638968e5.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/api.self-ba28ddb8d21487502a61753130e4dd26116f8a7f3f055e90fc728177c0e2ac3a.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 08:00:59 -0400
