@@ -6,13 +6,6 @@ var settings = (function () {
 	settings.loadAllSettingsFromCookie = function () {
 		if (navigator.cookieEnabled)
 		{
-            var iteration = settings.getCookie("iterationSpeed");
-            if (iteration != null && iteration != 250)
-                iterationSpeed = iteration;
-            
-            var visualization = settings.getCookie("algorithmVisualization");
-            if (visualization != null && visualization != algorithmVisualization)
-                algorithmVisualization = visualization;
             
             var code = settings.getCookie("javascriptCode");
             if (code != null && code.length > 0)
@@ -52,8 +45,6 @@ var settings = (function () {
 	settings.saveAllSettingsToCookie = function () {
 		if (navigator.cookieEnabled)
 		{
-            settings.setCookie("iterationSpeed", iterationSpeed, 999);
-            settings.setCookie("algorithmVisualization", algorithmVisualization, 999);
             settings.setCookie("javascriptCode", editor.getSession().getValue(), 999);
 		}
 		else

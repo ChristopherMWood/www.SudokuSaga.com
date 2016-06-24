@@ -8,7 +8,7 @@ var gameWon = false;
 
 var storage = {};
 var runLoop = false;
-var filledInCells = 33;
+var filledInCells = 36;
 var score = 0;
 var loopFunction;
 var sudokuGrids;
@@ -22,17 +22,6 @@ var errorColor = "#DC2F04";
 
 var asciiTitles = ["flip a table!", "flip two tables!", "get angry!", "start party time!"];
 var asciiArt = ["(╯°□°）╯︵ ┻━┻", "┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻", "ლ(ಠ益ಠ)ლ", "┏(-_-)┛┗(-_-﻿ )┓┗(-_-)┛┏(-_-)┓"];
-
-var easy1 = [[1, null, 6],[7, 9, null],[null, null, null]];
-var easy2 = [[null, 9, 3],[5, null, 6],[null, null, null]];
-var easy3 = [[null, 8, 7],[3, 1, null],[null, 6, null]];
-var easy4 = [[null, null, 2],[null, 6, 5],[9, 1, null]];
-var easy5 = [[null, 1, null],[null, null, null],[null, null, 4]];
-var easy6 = [[null, 5, 8],[null, null, null],[null, 3, null]];
-var easy7 = [[null, 8, null],[2, null, null],[null, null, null]];
-var easy8 = [[1, null, null],[null, 6, 5],[9, 7, null]];
-var easy9 = [[4, 7, null],[null, 9, null],[null, null, null]];
-var easyBoard = [[easy1, easy2, easy3],[easy4, easy5, easy6],[easy7, easy8, easy9]];
 
 var app = angular.module("sudokuSaga", []); 
 
@@ -74,7 +63,7 @@ $("#refresh-button").on("click", function () {
     clearIterationCount();
     enableSlider();
     clearScore();
-    filledInCells = 33;
+    filledInCells = 36;
 
     $("#action-button").removeClass('pause-image');
     $("#action-button").addClass('play-image');
@@ -86,12 +75,14 @@ $("#refresh-button").on("click", function () {
 });
 
 $("#step-button").on("click", function () {
+    settings.saveAllSettingsToCookie();
     if (!running && !gameWon) {
+
         if (!codeLoaded)
             loadAndResetUserCode();
 
         try {
-            loopFunction();
+            sudokuLoop();
         }
         catch (error) {
             $.ambiance({
@@ -111,6 +102,8 @@ $("#action-button").on("click", function () {
 });
 
 function playSudoku(button) {
+
+    settings.saveAllSettingsToCookie();
     if (!gameWon) {
         try {
             if (!codeLoaded)
@@ -152,12 +145,6 @@ function pauseSudoku(button) {
     running = false;
 
     enableSlider();
-
-    $.ambiance({
-        message: "Paused",
-        type: "default",
-        timeout: 3
-    });
 }
 
 function resetBoard() {
@@ -177,8 +164,8 @@ function enableSlider() {
 
 function loadAndResetUserCode() {
     var code = editor.getSession().getValue();
-    var cleanCode = removeBreaks(code);
-    $('#customScript').html('<script>' + cleanCode + '<\/script>');
+    //var cleanCode = removeBreaks(code);
+    $('#customScript').html('<script>' + code + '<\/script>');
     codeLoaded = true;
     loopIteration = 0;
     settings.saveAllSettingsToCookie();
@@ -250,10 +237,10 @@ function sudokuLoop()
 function checkForWin() {
     if (filledInCells >= 81)
     {
-        pauseSudoku($("#action-button"));
 
-        if (validateBoard())
+        if (gridService.validateBoard())
         {
+            console.log("YOU WON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             $.ambiance({
                 message: "GAME WON",
                 type: "success",
@@ -267,11 +254,9 @@ function checkForWin() {
                 timeout: 100
             });
         }
-    }
-}
 
-function validateBoard() {
-    
+        pauseSudoku($("#action-button"));
+    }
 }
 
 var rowClass = ["row0", "row1", "row2", "row3", "row4", "row5", "row6", "row7", "row8"];
@@ -336,7 +321,12 @@ function generateNullArray()
 }
 
 function ValidateInput(value) {
-    if(!Number.isInteger(value) || value < 0 || value > 10)
+    if(!Number.isInteger(value) || value < 0 || value > 8)
+        throw "Invalid grid input found. Must be a valid integer 0-8.";
+}
+
+function ValidateValueInput(value) {
+    if(!Number.isInteger(value) || value < 1 || value > 9)
         throw "Invalid grid input found. Must be a valid integer 1-9.";
 }
 

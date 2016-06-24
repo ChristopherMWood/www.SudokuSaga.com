@@ -69,7 +69,7 @@ app.service('gridService', function() {
 
     this.getCell = function (row, column) {
         var grid = this.sudokuGrids[Math.floor(row / 3)][Math.floor(column / 3)];
-        return grid[Math.floor(row % 3)][Math.floor(column % 3)];s
+        return grid[Math.floor(row % 3)][Math.floor(column % 3)];
     };
 
     this.setCell = function (row, column, value) {
@@ -114,5 +114,42 @@ app.service('gridService', function() {
                     return true;
 
         return false;
+    };
+
+    this.validateBoard = function () {
+        if (this.validGrids() && this.validColumns() && this.validRows())
+        return true;
+
+    return false;
+    };
+
+    this.validRows = function () {
+    for (var i = 0, j = 1; i < 9; i++, j++)
+        if (!this.isValueInRow(i, j))
+            return false;
+
+    return true;
+    };
+
+    this.validColumns = function () {
+    for (var i = 0, j = 1; i < 9; i++, j++)
+        if (!this.isValueInColumn(i, j))
+            return false;
+
+    return true;
+    };
+
+    this.validGrids = function () {
+    for (var i = 0; i < 3; i++)
+    {
+        for (var j = 0; j < 3; j++)
+        {
+            for (var x = i; x < 10; x++)
+                if (!this.isValueInGrid(i, j, x))
+                    return false;
+        }
+    }
+
+    return true;
     };
 });

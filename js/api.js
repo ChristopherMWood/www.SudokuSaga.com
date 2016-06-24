@@ -77,7 +77,7 @@ function clearCell(row, column) {
 function setCell(row, column, value) {
     ValidateInput(row);
     ValidateInput(column);
-    ValidateInput(value);
+    ValidateValueInput(value);
     clearAllHighlightsToDefaults();
 
     var cell = $("#cell-" + row + '-' + column);
@@ -104,7 +104,7 @@ function setCell(row, column, value) {
 }
 
 function isValueInRow(row, value) {
-    ValidateInput(value);
+    ValidateValueInput(value);
     ValidateInput(row);
     clearAllHighlightsToDefaults();
 
@@ -123,7 +123,7 @@ function isValueInRow(row, value) {
 }
 
 function isValueInColumn(column, value) {
-    ValidateInput(value);
+    ValidateValueInput(value);
     ValidateInput(column);
     clearAllHighlightsToDefaults();
 
@@ -142,7 +142,7 @@ function isValueInColumn(column, value) {
 }
 
 function isValueInGrid(row, column, value) {
-    ValidateInput(value);
+    ValidateValueInput(value);
     ValidateInput(row);
     ValidateInput(column);
     clearAllHighlightsToDefaults();
