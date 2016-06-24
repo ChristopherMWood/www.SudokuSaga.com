@@ -140,7 +140,7 @@ function initilizeEmptyBoard() {
     {
         for(var column = 0; column < 3; column++)
         {
-            markup += '<div id="grid-' + row + '-' + column + '" class="grid gridRow' + row + ' gridColumn' + column + '">';
+            markup += '<div id="grid-' + row + '-' + column + '" class="grid">';
             sudokuGrids[row][column] = generateNullArray();
             
             for (var cell_row = 0 + (3 * row), i = 0; cell_row < 3 + (3 * row); cell_row++, i++)

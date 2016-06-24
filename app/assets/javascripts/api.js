@@ -1,5 +1,4 @@
 var visualizationTime = 200;
-
 var gridService;
 
 $(function () {
@@ -8,7 +7,7 @@ $(function () {
     gridService.initilizeGrids(easyBoard);
 });
 
-function getCellValue(row, column) {
+function getCell(row, column) {
     ValidateInput(row);
     ValidateInput(column);
     clearAllHighlightsToDefaults();
@@ -16,7 +15,7 @@ function getCellValue(row, column) {
     var cell = $("#cell-" + row + '-' + column);
 
     if (algorithmVisualizationEnabled)
-        $(cell).css("background-color", actionColor).delay(visualizationTime);
+        $(cell).css("background-color", actionColor);
 
     return gridService.getCell(row, column);
 }
@@ -26,8 +25,9 @@ function getGrid(row, column) {
     ValidateInput(column);
     clearAllHighlightsToDefaults();
 
+    var gridCount = (row / 3) + ((column + 3) % 3);
     if (algorithmVisualizationEnabled)
-        $("#grid-" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
+        $(".grid" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
 
     return gridService.getGrid(row, column);
 }
@@ -76,80 +76,84 @@ function clearCell(row, column) {
     if (algorithmVisualizationEnabled)
         $(cell).css("background-color", errorColor).delay(visualizationTime);
 
-    //$(cell).("");
+    if (gridService.getCell(row, column) != null)
+        //increase score by removal amount
+
+    gridService.clearCell(row, column);
 }
 
-function setCellValue(row, column, value) {
+function setCell(row, column, value) {
     ValidateInput(row);
     ValidateInput(column);
     ValidateInput(value);
     clearAllHighlightsToDefaults();
-    
+
     var cell = $("#cell-" + row + '-' + column);
+    var cellAlreadySet = gridService.getCell(row, column) == null;
+
+    if (algorithmVisualizationEnabled)
+    {
+        if (cellAlreadySet)
+            $(cell).css("background-color", placementColor).delay(visualizationTime);
+        else
+            $(cell).css("background-color", errorColor).delay(visualizationTime);
+    }
+
+    gridService.setCell(row, column, value);
     $(cell).text(value);
-
-    if (algorithmVisualizationEnabled)
-        $(cell).css("background-color", placementColor).delay(visualizationTime);
-
-    var grid = gridService(Math.floor(row/3), Math.floor(i/3));
-    grid[Math.floor(row % 3)][Math.floor(column % 3)] = value;
 }
 
-function isValueInRow(value, row) {
+function isValueInRow(row, value) {
     ValidateInput(value);
     ValidateInput(row);
     clearAllHighlightsToDefaults();
-    
-    var found = false;
-    for (var i = 0; i < 9; i++)
+
+    var found = gridService.isValueInRow(row, value);;
+
+    if (algorithmVisualizationEnabled)
     {
-        var grid = gridService(Math.floor(row/3), Math.floor(i/3));
+        if (found)
+            $(".row" + row).css("background-color", placementColor).delay(visualizationTime);
+        else
+            $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
+    }
 
-        if (algorithmVisualizationEnabled)
-            $("#cell-" + row + '-' + i).css("background-color", actionColor).delay(visualizationTime);
+    return found;
+}
 
-        if (grid[Math.floor(row%3)][Math.floor(i%3)] == value)
-            found = true;
+function isValueInColumn(column, value) {
+    ValidateInput(value);
+    ValidateInput(column);
+    clearAllHighlightsToDefaults();
+
+    var found = gridService.isValueInColumn(column, value);
+
+    if (algorithmVisualizationEnabled)
+    {
+        if (found)
+            $(".column" + column).css("background-color", placementColor).delay(visualizationTime);
+        else
+            $(".column" + column).css("background-color", actionColor).delay(visualizationTime);
     }
     
     return found;
 }
 
-function isValueInColumn(value, column) {
-    ValidateInput(value);
-    ValidateInput(column);
-    clearAllHighlightsToDefaults();
-    
-    var found = false;
-    for (var i = 0; i < 9; i++)
-    {
-        var grid = gridService(Math.floor(column / 3), Math.floor(i / 3));
-
-        if (algorithmVisualizationEnabled)
-            $("#cell-" + i + '-' + column).css("background-color", actionColor).delay(visualizationTime);
-        
-        if (grid[Math.floor(i%3)][Math.floor(column%3)] == value)
-            found = true;
-    }
-    
-    return found;
-}
-
-function isValueInGrid(value, row, column) {
+function isValueInGrid(row, column, value) {
     ValidateInput(value);
     ValidateInput(row);
     ValidateInput(column);
     clearAllHighlightsToDefaults();
 
-    var grid = sudokuGrids[row][column];
+    var isInGrid = gridService.isValueInGrid(row, column, value);
 
     if (algorithmVisualizationEnabled)
-        $("#grid-" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
+    {
+        if (isInGrid)
+            $("#grid-" + row + '-' + column).css("background-color", placementColor).delay(visualizationTime);
+        else
+            $("#grid-" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
+    }
 
-    for (var i = 0; i < 3; i++)
-        for (var j = 0; j < 3; j++)
-            if (grid[i][j] == value)
-                return true;
-
-    return false;
+    return isInGrid;
 }

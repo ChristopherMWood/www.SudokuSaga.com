@@ -70,8 +70,47 @@ app.service('gridService', function() {
         return grid[Math.floor(row % 3)][Math.floor(column % 3)];s
     };
 
-    this.setCell = function (row, column) {
+    this.setCell = function (row, column, value) {
         var grid = this.sudokuGrids[Math.floor(row / 3)][Math.floor(column / 3)];
         grid[Math.floor(row % 3)][Math.floor(column % 3)] = value;
+    };
+
+    this.clearCell = function (row, column) {
+        var grid = this.sudokuGrids[Math.floor(row / 3)][Math.floor(column / 3)];
+        grid[Math.floor(row % 3)][Math.floor(column % 3)] = "";
+    };
+
+    this.isValueInRow = function (row, value) {
+
+        var row = this.getRow(row);
+
+        for (var i = 0; i < 9; i++)
+            if (row[i] == value)
+                return true;
+
+        return false;
+    };
+
+    this.isValueInColumn = function (column, value) {
+
+        var column = this.getColumn(column);
+
+        for (var i = 0; i < 9; i++)
+            if (column[i] == value)
+                return true;
+
+        return false;
+    };
+
+    this.isValueInGrid = function (row, column, value) {
+
+        var grid = this.getGrid(row, column);
+
+        for (var i = 0; i < 3; i++)
+            for (var j = 0; j < 3; j++)
+                if (grid[i][j] == value)
+                    return true;
+
+        return false;
     };
 });
