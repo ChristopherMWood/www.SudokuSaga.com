@@ -17,8 +17,6 @@ var placementColor = "#44D518";
 var actionColor = "#E68300";
 var errorColor = "#DC2F04";
 
-var algorithmVisualizationEnabled = true;
-
 var asciiTitles = ["flip a table!", "flip two tables!", "get angry!", "start party time!"];
 var asciiArt = ["(╯°□°）╯︵ ┻━┻", "┻━┻ ︵ヽ(`Д´)ﾉ︵﻿ ┻━┻", "ლ(ಠ益ಠ)ლ", "┏(-_-)┛┗(-_-﻿ )┓┗(-_-)┛┏(-_-)┓"];
 
@@ -53,7 +51,10 @@ app.controller("statisticsController", function($scope) {
 });
 
 $(function() {
+    disableSlider()
+    enableSlider();
     loadDefaultTextIntoEditor();
+    settings.loadAllSettingsFromCookie();
     setupSudokuGridArray();
     initilizeEmptyBoard();
 });
@@ -168,6 +169,7 @@ function loadAndResetUserCode() {
     $('#customScript').html('<script>' + cleanCode + '<\/script>');
     codeLoaded = true;
     loopIteration = 0;
+    settings.saveAllSettingsToCookie();
 }
 
 editor.commands.addCommand({
