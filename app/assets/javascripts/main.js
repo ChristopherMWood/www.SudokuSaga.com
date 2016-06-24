@@ -2,6 +2,9 @@ var editor = ace.edit("editor");
 editor.getSession().setMode("ace/mode/javascript");
 editor.setTheme("ace/theme/twilight");
 
+var codeLoaded = false;
+var running = false;
+
 var storage = {};
 var runLoop = false;
 var loopFunction;
@@ -33,8 +36,8 @@ var easyBoard = [[easy1, easy2, easy3],[easy4, easy5, easy6],[easy7, easy8, easy
 var app = angular.module("sudokuSaga", []); 
 
 app.controller("statisticsController", function($scope) {
-    $scope.iteration = 3;
-    $scope.score = 6;
+    $scope.iteration = 0;
+    $scope.score = 0;
 
     $scope.updateScore = function(value) {
         $scope.score += value;
@@ -43,16 +46,116 @@ app.controller("statisticsController", function($scope) {
     $scope.incrementIteration = function() {
         $scope.iteration++;
     };
+
+    $scope.clearIterationCount = function() {
+        $scope.iteration = 0;
+    };
 });
 
 $(function() {
-    //var savedCode = getCookie("sudoku-saved-code");
-    //if (savedCode != null)
-    //    $(".ace_content").text(savedCode);
     loadDefaultTextIntoEditor();
     setupSudokuGridArray();
     initilizeEmptyBoard();
 });
+
+$("#refresh-button").on("click", function () {
+    clearInterval(loopInterval);
+    codeLoaded = false;
+    running = false;
+    resetBoard();
+    clearIterationCount();
+
+    $("#action-button").removeClass('pause-image');
+    $("#action-button").addClass('play-image');
+
+    $.ambiance({
+        message: "Board Reset",
+        type: "success"
+    });
+});
+
+$("#step-button").on("click", function () {
+    if (!running) {
+        if (!codeLoaded)
+            loadAndResetUserCode();
+
+        try {
+            loopFunction();
+        }
+        catch (error) {
+            $.ambiance({
+                message: error.message,
+                type: "error",
+                timeout: 10
+            });
+        }
+    }
+});
+
+$("#action-button").on("click", function () {
+    if ($(this).hasClass('play-image'))
+        playSudoku($(this));
+    else
+        pauseSudoku($(this));
+});
+
+function playSudoku(button) {
+    try
+    {
+        if (!codeLoaded)
+            loadAndResetUserCode();
+
+        loopFunction = function () {
+            sudokuLoop();
+        };
+
+        loopInterval = setInterval(loopFunction, loopWaitTime);
+
+        button.removeClass('play-image');
+        button.addClass('pause-image');
+        running = true;
+
+        $.ambiance({
+            message: "Playing",
+            type: "success"
+        });
+    }
+    catch (error)
+    {
+        $.ambiance({
+            message: error.message,
+            type: "error",
+            timeout: 10
+        });
+    }
+}
+
+function pauseSudoku(button) {
+
+    clearInterval(loopInterval);
+
+    button.removeClass('pause-image');
+    button.addClass('play-image');
+    running = false;
+
+    $.ambiance({
+        message: "Paused",
+        type: "default",
+        timeout: 3
+    });
+}
+
+function resetBoard() {
+
+}
+
+function loadAndResetUserCode() {
+    var code = editor.getSession().getValue();
+    var cleanCode = removeBreaks(code);
+    $('#customScript').html('<script>' + cleanCode + '<\/script>');
+    codeLoaded = true;
+    loopIteration = 0;
+}
 
 editor.commands.addCommand({
     name: 'saveCode',
@@ -99,29 +202,6 @@ function loadDefaultTextIntoEditor()
 
     editor.setValue(defaultCode, -1);
 }
-
-$("#run-button").on("click", function() {
-    alert("TEST");
-    var code = editor.getSession().getValue();
-    var cleanCode = removeBreaks(code);
-
-    $('#customScript').html('<script>' + cleanCode + '<\/script>');
-
-    try
-    {
-        loopIteration = 0;
-        loopFunction = function () {
-            sudokuLoop();
-        };
-
-        loopInterval = setInterval(loopFunction, loopWaitTime);
-        //setCookie("sudoku-saved-code", code, 30);
-    }
-    catch (error)
-    {
-        alert(error.message);
-    }
-});
 
 function sudokuLoop()
 {

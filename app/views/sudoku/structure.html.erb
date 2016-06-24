@@ -1,4 +1,3 @@
-<%= stylesheet_link_tag 'structure' %>
 <html>
   <body ng-app="sudokuSaga" ng-cloak>
     <div id="page-content">
@@ -8,10 +7,20 @@
         </div>
         <div id="saga-controls-container">
           <div id="direct-controls">
-            <%= image_tag('step', class: 'control-icon right') %>
-            <%= image_tag('play', class: 'control-icon right') %>
-            <%= image_tag('pause', class: 'control-icon right') %>
-            <%= image_tag('refresh', class: 'control-icon left') %>
+            <div id="refresh-button" class="control-icon left sudoku-button"></div>
+            <div id="step-button" class="control-icon right sudoku-button"></div>
+            <div id="action-button" class="control-icon play-image right sudoku-button"></div>
+          </div>
+          <div class="control-block" ng-controller="statisticsController">
+            <h2>Stats</h2>
+            <div class="stat-block">
+              <label>Iteration</label>
+              <span id="iteration-stat">{{iteration}}</span>
+            </div>
+            <div class="stat-block">
+              <label>Score</label>
+              <span id="score-stat">{{score}}</span>
+            </div>
           </div>
         </div>
       </div>

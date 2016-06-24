@@ -84,9 +84,32 @@ html body {
 }
 
 #saga-controls-container {
-    background-color: purple;
+    background-color: #0f1418;
     height: 100%;
     flex: 2;
+    color: white;
+}
+
+#refresh-button {
+    background-image: url('refresh.png');
+}
+
+#step-button {
+    background-image: url('step.png');
+}
+
+.sudoku-button {
+    margin-top: 5px;
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+}
+
+.play-image {
+    background-image: url('play.png');
+}
+
+.pause-image {
+    background-image: url('pause.png');
 }
 
 #editor-controls
@@ -106,6 +129,7 @@ html body {
 
 .control-icon {
     height: 30px;
+    width: 40px;
     padding-top: 5px;
     margin-left: 5px;
 }
@@ -116,11 +140,17 @@ html body {
     width: 100%;
 }
 
-.control-block h3
+.control-block h2
 {
     text-align: center;
     margin: 0;
     border: solid 2px black;
+}
+
+.control-block
+{
+    height: 50%;
+    width: 100%;
 }
 
 .control-div
@@ -137,6 +167,38 @@ html body {
 
 .control-div input
 {
+    float: right;
+}
+
+.control-block h3
+{
+    text-align: center;
+    margin: 0;
+    border: solid 2px black;
+}
+
+.control-div label
+{
+    text-align: left;
+}
+
+.control-div input
+{
+    float: right;
+}
+
+.stat-block {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.stat-block label {
+    font-size: 24px;
+}
+
+.stat-block span {
+    padding-left: 50px;
+    font-size: 24px;
     float: right;
 }
 
@@ -187,7 +249,7 @@ html body {
     }
 
     #content-container {
-        display: flex;
+        flex-flow: initial;
         background-color: darkorange;
         border-bottom: solid 3px black;
         width: 100%;
@@ -197,7 +259,7 @@ html body {
     }
 
     #direct-controls {
-        width: 60%;
+        width: 100%;
         height: 40px;
         background-color: red;
     }
