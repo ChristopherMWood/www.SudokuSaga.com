@@ -4,9 +4,11 @@ editor.setTheme("ace/theme/twilight");
 
 var codeLoaded = false;
 var running = false;
+var gameWon = false;
 
 var storage = {};
 var runLoop = false;
+var filledInCells = 33;
 var score = 0;
 var loopFunction;
 var sudokuGrids;
@@ -72,6 +74,7 @@ $("#refresh-button").on("click", function () {
     clearIterationCount();
     enableSlider();
     clearScore();
+    filledInCells = 33;
 
     $("#action-button").removeClass('pause-image');
     $("#action-button").addClass('play-image');
@@ -83,7 +86,7 @@ $("#refresh-button").on("click", function () {
 });
 
 $("#step-button").on("click", function () {
-    if (!running) {
+    if (!running && !gameWon) {
         if (!codeLoaded)
             loadAndResetUserCode();
 
@@ -108,35 +111,35 @@ $("#action-button").on("click", function () {
 });
 
 function playSudoku(button) {
-    try
-    {
-        if (!codeLoaded)
-            loadAndResetUserCode();
+    if (!gameWon) {
+        try {
+            if (!codeLoaded)
+                loadAndResetUserCode();
 
-        loopFunction = function () {
-            sudokuLoop();
-        };
+            loopFunction = function () {
+                sudokuLoop();
+            };
 
-        loopInterval = setInterval(loopFunction, loopWaitTime);
+            loopInterval = setInterval(loopFunction, loopWaitTime);
 
-        button.removeClass('play-image');
-        button.addClass('pause-image');
-        running = true;
+            button.removeClass('play-image');
+            button.addClass('pause-image');
+            running = true;
 
-        disableSlider();
+            disableSlider();
 
-        $.ambiance({
-            message: "Playing",
-            type: "success"
-        });
-    }
-    catch (error)
-    {
-        $.ambiance({
-            message: error.message,
-            type: "error",
-            timeout: 10
-        });
+            $.ambiance({
+                message: "Playing",
+                type: "success"
+            });
+        }
+        catch (error) {
+            $.ambiance({
+                message: error.message,
+                type: "error",
+                timeout: 10
+            });
+        }
     }
 }
 
@@ -158,7 +161,10 @@ function pauseSudoku(button) {
 }
 
 function resetBoard() {
-
+    if (!gameWon) {
+        initilizeEmptyBoard();
+        gridService.initilizeGrids();
+    }
 }
 
 function disableSlider() {
@@ -238,6 +244,24 @@ function sudokuLoop()
 {
     sudoku.iteration();
     incrementIterationCount();
+    checkForWin();
+}
+
+function checkForWin() {
+    if (filledInCells >= 81 && validateBoard())
+    {
+        pauseSudoku($("#action-button"));
+
+        $.ambiance({
+            message: "GAME WON",
+            type: "success",
+            timeout: 100
+        });
+    }
+}
+
+function validateBoard() {
+
 }
 
 var rowClass = ["row0", "row1", "row2", "row3", "row4", "row5", "row6", "row7", "row8"];

@@ -4,6 +4,8 @@ app.service('gridService', function() {
 
     this.initilizeGrids = function (initialBoard) {
 
+        initilizeEmptyBoard();
+
         for (var i = 0; i < 3; i++)
             this.sudokuGrids[i] = new Array(3);
 

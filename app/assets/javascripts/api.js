@@ -81,20 +81,23 @@ function setCell(row, column, value) {
     clearAllHighlightsToDefaults();
 
     var cell = $("#cell-" + row + '-' + column);
-    var cellAlreadySet = gridService.getCell(row, column) == null;
+    var cellAlreadySet = gridService.getCell(row, column) != null;
 
     if (settings.algorithmVisualizationEnabled())
     {
         if (cellAlreadySet)
-            $(cell).css("background-color", placementColor).delay(visualizationTime);
-        else
             $(cell).css("background-color", errorColor).delay(visualizationTime);
+        else
+            $(cell).css("background-color", placementColor).delay(visualizationTime);
     }
 
-    if (cellAlreadySet)
+    if (cellAlreadySet) {
         addToScore(10);
-    else
+    }
+    else {
         addToScore(-5);
+        filledInCells++;
+    }
 
     gridService.setCell(row, column, value);
     $(cell).text(value);
