@@ -14,6 +14,10 @@ var settings = (function () {
 		}
 	};
 
+    settings.algorithmVisualizationEnabled = function () {
+        return algorithmVisualization;
+    }
+
 	settings.enableAlgorithmVisualization = function (enable) {
     	algorithmVisualizationEnabled = enable;
 	};

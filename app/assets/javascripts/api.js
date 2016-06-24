@@ -14,7 +14,7 @@ function getCell(row, column) {
     
     var cell = $("#cell-" + row + '-' + column);
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
         $(cell).css("background-color", actionColor);
 
     return gridService.getCell(row, column);
@@ -26,7 +26,7 @@ function getGrid(row, column) {
     clearAllHighlightsToDefaults();
 
     var gridCount = (row / 3) + ((column + 3) % 3);
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
         $(".grid" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
 
     return gridService.getGrid(row, column);
@@ -42,7 +42,7 @@ function getRow(row) {
         var grid = gridService.getGrid(Math.floor(row/3), Math.floor(i/3));
         rowArray[i] = grid[Math.floor(row%3)][Math.floor(i%3)];
 
-        if (algorithmVisualizationEnabled)
+        if (settings.algorithmVisualizationEnabled())
             $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
     }
 
@@ -60,7 +60,7 @@ function getColumn(column) {
         columnArray[i] = grid[Math.floor(i % 3)][Math.floor(column % 3)];
     }
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
         $(".column" + column).css("background-color", actionColor).delay(visualizationTime);
     
     return columnArray;
@@ -73,7 +73,7 @@ function clearCell(row, column) {
     
     var cell = $("#cell-" + row + '-' + column);
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
         $(cell).css("background-color", errorColor).delay(visualizationTime);
 
     if (gridService.getCell(row, column) != null)
@@ -91,7 +91,7 @@ function setCell(row, column, value) {
     var cell = $("#cell-" + row + '-' + column);
     var cellAlreadySet = gridService.getCell(row, column) == null;
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
     {
         if (cellAlreadySet)
             $(cell).css("background-color", placementColor).delay(visualizationTime);
@@ -110,7 +110,7 @@ function isValueInRow(row, value) {
 
     var found = gridService.isValueInRow(row, value);;
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
     {
         if (found)
             $(".row" + row).css("background-color", placementColor).delay(visualizationTime);
@@ -128,7 +128,7 @@ function isValueInColumn(column, value) {
 
     var found = gridService.isValueInColumn(column, value);
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
     {
         if (found)
             $(".column" + column).css("background-color", placementColor).delay(visualizationTime);
@@ -147,7 +147,7 @@ function isValueInGrid(row, column, value) {
 
     var isInGrid = gridService.isValueInGrid(row, column, value);
 
-    if (algorithmVisualizationEnabled)
+    if (settings.algorithmVisualizationEnabled())
     {
         if (isInGrid)
             $("#grid-" + row + '-' + column).css("background-color", placementColor).delay(visualizationTime);

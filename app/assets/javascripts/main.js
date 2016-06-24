@@ -64,6 +64,7 @@ $("#refresh-button").on("click", function () {
     running = false;
     resetBoard();
     clearIterationCount();
+    toggleSettingsButton("enable");
 
     $("#action-button").removeClass('pause-image');
     $("#action-button").addClass('play-image');
@@ -115,6 +116,8 @@ function playSudoku(button) {
         button.addClass('pause-image');
         running = true;
 
+        toggleSettingsButton("disabled");
+
         $.ambiance({
             message: "Playing",
             type: "success"
@@ -138,6 +141,8 @@ function pauseSudoku(button) {
     button.addClass('play-image');
     running = false;
 
+    toggleSettingsButton("enabled");
+
     $.ambiance({
         message: "Paused",
         type: "default",
@@ -146,6 +151,10 @@ function pauseSudoku(button) {
 }
 
 function resetBoard() {
+
+}
+
+function toggleSettingsButton(value) {
 
 }
 
@@ -321,7 +330,7 @@ $("#editor-theme-dropdown").on("change", function() {
     settings.setEditorTheme($(this).val());
 });
 
-$("#visualization-toggle").on("change", function() {
+$("#visualizationCheckbox").on("change", function() {
     settings.enableAlgorithmVisualization($(this).is(':checked'));
 });
 
