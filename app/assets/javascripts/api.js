@@ -17,6 +17,7 @@ function getCell(row, column) {
     if (settings.algorithmVisualizationEnabled())
         $(cell).css("background-color", actionColor);
 
+    addToScore(1);
     return gridService.getCell(row, column);
 }
 
@@ -29,6 +30,7 @@ function getGrid(row, column) {
     if (settings.algorithmVisualizationEnabled())
         $(".grid" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
 
+    addToScore(1);
     return gridService.getGrid(row, column);
 }
 
@@ -36,34 +38,22 @@ function getRow(row) {
     ValidateInput(row);
     clearAllHighlightsToDefaults();
 
-    var rowArray = new Array(9);
-    for (var i = 0; i < 9; i++)
-    {
-        var grid = gridService.getGrid(Math.floor(row/3), Math.floor(i/3));
-        rowArray[i] = grid[Math.floor(row%3)][Math.floor(i%3)];
+    if (settings.algorithmVisualizationEnabled())
+        $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
 
-        if (settings.algorithmVisualizationEnabled())
-            $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
-    }
-
-    return rowArray;
+    addToScore(1);
+    return gridService.getRow(row);
 }
 
 function getColumn(column) {
     ValidateInput(column);
     clearAllHighlightsToDefaults();
-        
-    var columnArray = new Array(9);
-    for (var i = 0; i < 9; i++)
-    {
-        var grid = gridService.getGrid(Math.floor(i / 3), Math.floor(column / 3));
-        columnArray[i] = grid[Math.floor(i % 3)][Math.floor(column % 3)];
-    }
 
     if (settings.algorithmVisualizationEnabled())
         $(".column" + column).css("background-color", actionColor).delay(visualizationTime);
-    
-    return columnArray;
+
+    addToScore(1);
+    return gridService.getColumn(column);;
 }
 
 function clearCell(row, column) {
@@ -77,7 +67,9 @@ function clearCell(row, column) {
         $(cell).css("background-color", errorColor).delay(visualizationTime);
 
     if (gridService.getCell(row, column) != null)
-        //increase score by removal amount
+        addToScore(5);
+    else
+        addToScore(10);
 
     gridService.clearCell(row, column);
 }
@@ -99,6 +91,11 @@ function setCell(row, column, value) {
             $(cell).css("background-color", errorColor).delay(visualizationTime);
     }
 
+    if (cellAlreadySet)
+        addToScore(10);
+    else
+        addToScore(-5);
+
     gridService.setCell(row, column, value);
     $(cell).text(value);
 }
@@ -118,6 +115,7 @@ function isValueInRow(row, value) {
             $(".row" + row).css("background-color", actionColor).delay(visualizationTime);
     }
 
+    addToScore(1);
     return found;
 }
 
@@ -135,7 +133,8 @@ function isValueInColumn(column, value) {
         else
             $(".column" + column).css("background-color", actionColor).delay(visualizationTime);
     }
-    
+
+    addToScore(1);
     return found;
 }
 
@@ -155,5 +154,6 @@ function isValueInGrid(row, column, value) {
             $("#grid-" + row + '-' + column).css("background-color", actionColor).delay(visualizationTime);
     }
 
+    addToScore(1);
     return isInGrid;
 }

@@ -7,6 +7,7 @@ var running = false;
 
 var storage = {};
 var runLoop = false;
+var score = 0;
 var loopFunction;
 var sudokuGrids;
 var loopInterval;
@@ -41,6 +42,10 @@ app.controller("statisticsController", function($scope) {
         $scope.score += value;
     };
 
+    $scope.clearScoreCount = function() {
+        $scope.score += value;
+    };
+
     $scope.incrementIteration = function() {
         $scope.iteration++;
     };
@@ -66,6 +71,7 @@ $("#refresh-button").on("click", function () {
     resetBoard();
     clearIterationCount();
     enableSlider();
+    clearScore();
 
     $("#action-button").removeClass('pause-image');
     $("#action-button").addClass('play-image');
@@ -209,6 +215,16 @@ function clearIterationCount()
 {
     loopIteration = 0;
     $("#iteration-stat").text(loopIteration);
+}
+
+function addToScore(amount) {
+    score += amount;
+    $("#score-stat").text(score);
+}
+
+function clearScore() {
+    score = 0;
+    $("#score-stat").text(score);
 }
 
 function loadDefaultTextIntoEditor()

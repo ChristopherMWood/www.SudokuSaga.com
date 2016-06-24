@@ -4,7 +4,7 @@ class SudokuController < ApplicationController
 
   end
 
-  def structure
+  def documentation
 
   end
 
