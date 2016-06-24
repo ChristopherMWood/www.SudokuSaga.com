@@ -19,7 +19,7 @@ var settings = (function () {
     }
 
 	settings.enableAlgorithmVisualization = function (enable) {
-    	algorithmVisualizationEnabled = enable;
+        algorithmVisualization = enable;
 	};
 
 	settings.setIterationFrequency = function (milliseconds) {

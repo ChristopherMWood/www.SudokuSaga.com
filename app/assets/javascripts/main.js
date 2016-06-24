@@ -64,7 +64,7 @@ $("#refresh-button").on("click", function () {
     running = false;
     resetBoard();
     clearIterationCount();
-    toggleSettingsButton("enable");
+    enableSlider();
 
     $("#action-button").removeClass('pause-image');
     $("#action-button").addClass('play-image');
@@ -116,7 +116,7 @@ function playSudoku(button) {
         button.addClass('pause-image');
         running = true;
 
-        toggleSettingsButton("disabled");
+        disableSlider();
 
         $.ambiance({
             message: "Playing",
@@ -141,7 +141,7 @@ function pauseSudoku(button) {
     button.addClass('play-image');
     running = false;
 
-    toggleSettingsButton("enabled");
+    enableSlider();
 
     $.ambiance({
         message: "Paused",
@@ -154,8 +154,12 @@ function resetBoard() {
 
 }
 
-function toggleSettingsButton(value) {
+function disableSlider() {
+    $("#loop-frequency").prop("disabled", true);
+}
 
+function enableSlider() {
+    $("#loop-frequency").prop("disabled", "");
 }
 
 function loadAndResetUserCode() {
