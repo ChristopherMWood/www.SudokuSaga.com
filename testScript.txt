@@ -21,7 +21,7 @@ var sudoku = (function () {
     
     saga.checkCellForMatch= function (row, column)
     {
-        var cellValue = getCellValue(row, column);
+        var cellValue = getCell(row, column);
         if (cellValue !== null)
         {
             var i = 0;
@@ -43,7 +43,7 @@ var sudoku = (function () {
             isValueInColumn(value, column + 1) &&
             !isValueInColumn(value, column))
             {
-                setCellValue(row, column, value);
+                setCell(row, column, value);
             }
     };
 

@@ -13040,3 +13040,565 @@ Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 01:00:36 -0400
 
 
 Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 01:00:36 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (3.5ms)
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/ambiance.jquery.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/api.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/chatroom.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/main.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/settings.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/javascripts/sudokuService.js
+including asset: /home/christopher/dev/sudokusaga/app/assets/stylesheets/ambiance.jquery.css
+including asset: /home/christopher/dev/sudokusaga/app/assets/stylesheets/structure.css
+including asset: /home/christopher/dev/sudokusaga/app/assets/stylesheets/styles.css
+excluding asset: /var/lib/gems/2.3.0/gems/turbolinks-2.5.3/lib/assets/javascripts/turbolinks.js.coffee
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery.min.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery2.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery2.min.js
+excluding asset: /var/lib/gems/2.3.0/gems/jquery-rails-4.1.1/vendor/assets/javascripts/jquery_ujs.js
+excluding asset: /var/lib/gems/2.3.0/gems/coffee-rails-4.1.1/lib/assets/javascripts/coffee-script.js.erb
+Completed 200 OK in 321ms (Views: 312.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (9.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (35.5ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:10:35 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (17.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (31.7ms)
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:09 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (16.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (30.3ms)
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:11:21 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.2ms)
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:12:04 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:12:08 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (36.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:13:02 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/css/styles.css" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+ActionController::RoutingError (No route matches [GET] "/css/styles.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:22:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/content_length.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (15.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (33.1ms)
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:13:03 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:23 -0400
+
+
+Started GET "/assets/refresh.png" for 127.0.0.1 at 2016-06-24 01:14:24 -0400
+
+
+Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 01:14:24 -0400
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 01:14:24 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/refresh.png" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 01:14:34 -0400
+
+
+Started GET "/assets/pause.png" for 127.0.0.1 at 2016-06-24 01:14:44 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+Processing by SudokuController#sudoku_board as HTML
+  Rendered sudoku/sudoku_board.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/ambiance.jquery.self-5d791e437afb0611720cb60a551ba123ceb740844e8ce5031720369b46fd4d69.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/structure.self-1b1b260ccd643487cc6457915e4cc14287fc1f7a4bed483f0401a657b6d526d4.css?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/ambiance.jquery.self-d748825f7a0bfcd81de643f3952df8ff0d87afa37b828a0013be219c6638ffce.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/sudokuService.self-c75583eb7e63a806181524f860fdfce2c4d16443939dc028eed5c681f83bf62d.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/api.self-69d87c58ebec1b7cfe5b4fba71070bd1e52b28fffb0a1b90ec2d9ef487ff9129.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/settings.self-0240fd0e17ea911dda91caf2d393885402fd1bf07260c5c9045db6c36bd82ba6.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/chatroom.self-3bcf34f535beeb31bcec9bb678ea6a4eea6f030589871bf36f5bf3cf628c76fa.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/main.self-3a92bbce04c8f1ea6e3d68eea3574f8efa3511169fbc36a1dacca3fc27e55ee2.js?body=1" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/refresh.png" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/step.png" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
+
+
+Started GET "/assets/play.png" for 127.0.0.1 at 2016-06-24 01:14:46 -0400
