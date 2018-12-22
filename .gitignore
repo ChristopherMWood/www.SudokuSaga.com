@@ -14,6 +14,9 @@
 .virb*
 *.*~
 
+# Ignore all node modules
+node_modules
+
 # various artifacts
 **.war
 *.gem
