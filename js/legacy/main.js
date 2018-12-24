@@ -1,6 +1,4 @@
-var editor = ace.edit("editor");
-editor.getSession().setMode("ace/mode/javascript");
-editor.setTheme("ace/theme/twilight");
+
 
 var codeLoaded = false;
 var running = false;
