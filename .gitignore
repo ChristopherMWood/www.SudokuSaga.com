@@ -143,3 +143,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Ignore test runs
+.nyc_output
