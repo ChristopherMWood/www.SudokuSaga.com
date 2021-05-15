@@ -1,0 +1,10 @@
+.sudoku-board {
+    width: 400px;
+    height: 400px;
+    background-color: #264653;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1%;
+}

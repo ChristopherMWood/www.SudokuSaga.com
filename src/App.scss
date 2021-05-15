@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -11,6 +7,16 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.editorContainer {
+  width: 50%;
+}
+
+.editorContainer:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .App-header {

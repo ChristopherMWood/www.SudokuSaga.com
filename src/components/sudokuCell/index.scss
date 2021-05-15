@@ -1,0 +1,20 @@
+.sudoku-cell {
+    width: 32%;
+    height: 32%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+
+    input {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+        cursor: pointer;
+        font-size: 16pt;
+    }
+}
