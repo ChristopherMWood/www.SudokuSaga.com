@@ -1,46 +1,38 @@
 {
-  "name": "www.sudokusaga.com",
-  "version": "1.0.0",
-  "description": "python -m SimpleHTTPServer &",
-  "main": "index.js",
+  "name": "sudoku-saga",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.16.4",
-    "vue": "^2.5.21",
-    "vue-cookies": "^1.5.12"
-  },
-  "devDependencies": {
-    "autowire": "^2.2.13-1",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "chai": "^4.2.0",
-    "chai-http": "^4.2.1",
-    "css-loader": "^2.0.2",
-    "mocha": "^6.0.2",
-    "mysql": "^2.16.0",
-    "nodemon": "^1.18.10",
-    "nyc": "^13.3.0",
-    "request": "^2.88.0",
-    "vue-loader": "^15.4.2",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.5.21",
-    "webpack": "^4.28.2"
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "mocha --recursive ./tests/integration/ --exit"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/christophermwood/www.sudokusaga.com.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/christophermwood/www.sudokusaga.com/issues"
-  },
-  "homepage": "https://github.com/christophermwood/www.sudokusaga.com#readme"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

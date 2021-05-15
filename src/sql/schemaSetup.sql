@@ -1,1 +1,0 @@
-CREATE TABLE leaderboard (id VARCHAR(36), name VARCHAR(64), score INT, ip VARCHAR(39));
