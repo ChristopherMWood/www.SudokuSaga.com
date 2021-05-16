@@ -36,8 +36,6 @@ function TabPanel(props) {
   );
 }
 
-const value = 0;
-
 function App() {
   const [value, setValue] = React.useState(0);
 
