@@ -1,0 +1,40 @@
+&{
+    .site-header {
+      padding: 10px 0px;
+      margin-bottom: 10px;
+      border-bottom: solid 1px black;
+      
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .site-content {
+      margin: 0;
+      display: block;
+  
+      .info-container {
+        display: flex;
+        align-items: center;
+        display: block;
+        width: 100%;
+    
+        .output-container {
+          display: block;
+          width: 100%;
+        }
+      }
+    
+      .interaction-container {
+        display: block;
+        width: 100%;
+      }
+    }
+  
+  #code_editor {
+    width: 100% !important;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+  }
+}
