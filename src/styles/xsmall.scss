@@ -1,16 +1,18 @@
 &{
     .site-header {
       padding: 10px 0px;
-      margin-bottom: 10px;
       border-bottom: solid 1px black;
       
       h2 {
-        margin: 0;
+        margin: 0px 0px 0px 20px;
+        text-align: left;
       }
     }
 
     .site-content {
+      flex: 1;
       display: block;
+      height: 100%;
   
       .simulation-container {
         display: flex;
@@ -20,13 +22,14 @@
         width: 100%;
 
         .board-container {
-          margin: 0 20px;
+          margin: 20px;
         }
     
         .simulation-controls-container {
           display: block;
           height: 100px;
           width: 100%;
+          border: solid 1px black;
         }
       }
     

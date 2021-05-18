@@ -1,7 +1,25 @@
+.editor-view-container {
+  height: 100%;
+  width: 100%;
+}
+
+.editor-controls {
+  height: 50px;
+  background-color: grey;
+}
+
+.code-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
 
   #code_editor {
     width: 100% !important;
-    height: 600px;
-    margin: 0;
-    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
+}
+  

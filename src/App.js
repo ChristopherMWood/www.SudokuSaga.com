@@ -54,7 +54,7 @@ function App() {
             <SudokuBoard />
           </div>
           <div className="simulation-controls-container">
-            <label>This is a test</label>
+            <label>Run output</label>
           </div>
         </div>
         <div className="interaction-container">

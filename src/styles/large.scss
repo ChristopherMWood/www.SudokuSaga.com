@@ -1,14 +1,14 @@
 &{
     .site-header {
         h2 {
-            margin: 0 20%;
         }
     }
   
     .site-content {
+        height: 100%;
         display: grid;
         grid-template-columns: auto 365px 627px auto;
-        grid-template-rows: auto auto;
+        grid-template-rows: 100%;
   
         .simulation-container {
             grid-column-start: 2;
@@ -22,7 +22,7 @@
   
         .interaction-container {
             grid-column-start: 3;
-            
+            height: 100%;
         }
     }
   }
