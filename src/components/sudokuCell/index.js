@@ -1,5 +1,4 @@
 import React from 'react';
-import 'components/sudokuCell/index.scss';
 
 class SudokuCell extends React.Component {
     render() {

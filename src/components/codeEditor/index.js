@@ -27,7 +27,7 @@ let sudoku = (function () {
 class CodeEditor extends React.Component {
     render() {
         return (
-            <div class="editor-view-container">
+            <div className="editor-view-container">
                 <div className="editor-controls">
                     This is the code controls
                 </div>

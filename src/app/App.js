@@ -1,4 +1,3 @@
-import './App.scss';
 import React from "react";
 import SudokuBoard from 'components/sudokuBoard';
 import CodeEditor from 'components/codeEditor';
