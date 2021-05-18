@@ -1,0 +1,28 @@
+&{
+    .site-header {
+        h2 {
+            margin: 0 20%;
+        }
+    }
+  
+    .site-content {
+        display: grid;
+        grid-template-columns: auto 365px 627px auto;
+        grid-template-rows: auto auto;
+  
+        .simulation-container {
+            grid-column-start: 2;
+            
+            .board-container {
+            }
+        
+            .simulation-controls-container {
+            }
+        }
+  
+        .interaction-container {
+            grid-column-start: 3;
+            
+        }
+    }
+  }

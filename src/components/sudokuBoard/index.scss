@@ -1,9 +1,11 @@
 .sudoku-board {
-    width: 400px;
-    height: 400px;
+    $board-width: 325px;
+    width: $board-width;
+    height: $board-width;
     background-color: #264653;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
 }

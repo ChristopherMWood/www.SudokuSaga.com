@@ -1,16 +1,24 @@
-
-$mobile-min-break: 480px;
-$tablet-min-break: 768px;
-$desktop-min-break: 1024px;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$xlarge: 1200px;
 
 .app {
-  @import './styles/mobile.scss';
+  @import './styles/xsmall.scss';
 
-  @media (min-width: $tablet-min-break) {
-    @import './styles/tablet.scss';
+  @media (min-width: $small) {
+    @import './styles/small.scss';
   }
 
-  @media (min-width: $desktop-min-break) {
-    @import './styles/desktop.scss';
+  @media (min-width: $medium) {
+    @import './styles/medium.scss';
+  }
+
+  @media (min-width: $large) {
+    @import './styles/large.scss';
+  }
+
+  @media (min-width: $large) {
+    @import './styles/xlarge.scss';
   }
 }

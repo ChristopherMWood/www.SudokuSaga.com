@@ -10,31 +10,31 @@
     }
 
     .site-content {
-      margin: 0;
       display: block;
   
-      .info-container {
+      .simulation-container {
         display: flex;
         align-items: center;
+        flex-direction: column;
         display: block;
         width: 100%;
+
+        .board-container {
+          margin: 0 20px;
+        }
     
-        .output-container {
+        .simulation-controls-container {
           display: block;
+          height: 100px;
           width: 100%;
         }
       }
     
       .interaction-container {
         display: block;
+        margin: 0;
+        padding: 0;
         width: 100%;
       }
     }
-  
-  #code_editor {
-    width: 100% !important;
-    height: 600px;
-    margin: 0;
-    padding: 0;
-  }
 }
