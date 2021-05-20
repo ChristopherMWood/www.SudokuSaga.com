@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="site-header">
+      <div className="site-hçeader">
         <h2>Sudoku Saga</h2>
       </div>
       <div className="board-container">
