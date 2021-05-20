@@ -30,7 +30,7 @@ function TabPanel(props) {
       aria-labelledby={`scrollable-auto-tab-${index}`}
       {...other}
     >
-      <Box p={0}>{children}</Box>
+      <div>{children}</div>
     </Typography>
   );
 }
@@ -47,39 +47,33 @@ function App() {
       <div className="site-header">
         <h2>Sudoku Saga</h2>
       </div>
-      <div className="site-content">
-        <div className="simulation-container">
-          <div className="board-container">
-            <SudokuBoard />
-          </div>
-          <div className="simulation-controls-container">
-            <label>This is a test</label>
-          </div>
-        </div>
-        <div className="interaction-container">
-          <AppBar position="static" color="default">
-            <Tabs value={value} onChange={handleChange}>
-              <Tab label="<> Code" {...a11yProps(0)} />
-              <Tab label="Docs" {...a11yProps(1)} />
-              <Tab label="Leaderboard" {...a11yProps(2)} />
-              <Tab label="About" {...a11yProps(3)} />
-            </Tabs>
-          </AppBar>
+      <div className="board-container">
+        <SudokuBoard />
+      </div>
+      <div className="simulation-controls-container">
+        <label>This is a test</label>
+      </div>
+      <div className="interaction-container">
+        <AppBar position="static" color="default" >
+          <Tabs value={value} onChange={handleChange}>
+            <Tab label="<> Code" {...a11yProps(0)} />
+            <Tab label="Docs" {...a11yProps(1)} />
+            <Tab label="Leaderboard" {...a11yProps(2)} />
+            <Tab label="About" {...a11yProps(3)} />
+          </Tabs>
+        </AppBar>
+        <div className="scrollable-contents">
           <TabPanel value={value} index={0}>
-            {/* <CodeEditor /> */}
-            <Docs />
+            <CodeEditor />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            {/* <Docs /> */}
             <Docs />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            {/* <Leaderboard /> */}
-            <Docs />
+            <Leaderboard />
           </TabPanel>
           <TabPanel value={value} index={3}>
-            {/* <About /> */}
-            <Docs />
+            <About />
           </TabPanel>
         </div>
       </div>
