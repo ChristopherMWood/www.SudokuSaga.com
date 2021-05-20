@@ -85,23 +85,23 @@ const reducer = (state = initialState, action) => {
     }
 
     if (action.type === 'GET_ROW') {
-        let rowSections = [];
-        let division = Math.floor(action.payload.row/3);
-
-        if (division === 0) {
-            rowSections = [0, 1, 2];
-        } else if (division === 1) {
-            rowSections = [3, 4, 5];
-        } else if (division === 2) {
-            rowSections = [6, 7, 8];
-        }
+        let rowOptions = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+        let sectionDivision = Math.floor(action.payload.row/3);
+        let rowSections = rowOptions[sectionDivision];
+        
+        let cellDivision = Math.floor(action.payload.row % 3);
+        let rowCells = rowOptions[cellDivision];
 
         return Object.assign({}, state, {
             sudokuBoard: {
                 sections: state.sudokuBoard.sections.map((section, index) => {
                     if (rowSections.includes(index)) {
-                        section.cells = section.cells.map((cell) => {
-                            cell.state = "viewed"
+                        section.cells = section.cells.map((cell, index) => {
+                            if (rowCells.includes(index)) {
+                                cell.state = "viewed"
+                            } else {
+                                cell.state = "none"
+                            }
                             return cell;
                         })
                     } else {                        
@@ -117,12 +117,23 @@ const reducer = (state = initialState, action) => {
     }
 
     if (action.type === 'GET_COLUMN') {
+        let columnOptions = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
+        let sectionDivision = Math.floor(action.payload.column/3);
+        let rowSections = columnOptions[sectionDivision];
+
+        let cellDivision = Math.floor(action.payload.column % 3);
+        let rowCells = columnOptions[cellDivision];
+
         return Object.assign({}, state, {
             sudokuBoard: {
                 sections: state.sudokuBoard.sections.map((section, index) => {
-                    if (index === action.payload.column) {
-                        section.cells = section.cells.map((cell) => {
-                            cell.state = "viewed"
+                    if (rowSections.includes(index)) {
+                        section.cells = section.cells.map((cell, index) => {
+                            if (rowCells.includes(index)) {
+                                cell.state = "viewed"
+                            } else {
+                                cell.state = "none"
+                            }
                             return cell;
                         })
                     } else {                        

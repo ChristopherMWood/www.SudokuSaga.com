@@ -10,10 +10,6 @@ class SudokuBoard extends React.Component {
         };
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log("BOARD UPDATED");
-    }
-
     render() {
         return (
         <div className="sudoku-board">
