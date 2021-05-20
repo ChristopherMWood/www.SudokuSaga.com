@@ -2,14 +2,20 @@ import React from 'react';
 import SudokuCell from 'components/sudokuCell';
 
 class SudokuSection extends React.Component {
+    constructor(props) {
+        super(props);
+            this.state = {
+            section: props.section
+        };
+    }
+
     render() {
-        let cells = [];
-
-        for (let i = 0; i < 9; i++) {
-            cells.push(<SudokuCell key={i} />);
-        }
-
-        return <div className="sudoku-section">{cells}</div>;
+        return (
+        <div className="sudoku-section">
+            {this.state.section.cells.map((cell, i) => {
+                return <SudokuCell key={i} cell={cell} />;
+            })}
+        </div>);
     }
 }
 
