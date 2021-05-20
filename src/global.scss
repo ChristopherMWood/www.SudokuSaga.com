@@ -3,6 +3,9 @@ $medium: 768px;
 $large: 992px;
 $xlarge: 1200px;
 
+$primary-color: white;
+$secondary-color: purple;
+
 @import './index.scss';
 @import './app/App.scss';
 @import './components/codeEditor/index.scss';
