@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './global.scss';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-
+import Api from 'api.js'
 import { Provider } from 'react-redux'
 import store from './store/index'
 window.store = store
+
+window.Api = new Api(store);
 
 ReactDOM.render(
   <React.StrictMode>
