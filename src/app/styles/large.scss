@@ -7,22 +7,30 @@
     .site-content {
         height: 100%;
         display: grid;
-        grid-template-columns: auto 365px 627px auto;
-        grid-template-rows: 100%;
+        grid-gap: 5px;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 385px 100%;
+        background-color: red;
   
         .simulation-container {
-            grid-column-start: 2;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            background-color: white;
             
             .board-container {
+                background-color: white;
             }
         
             .simulation-controls-container {
+                height: 100%;
+                background-color: white;
             }
         }
   
         .interaction-container {
-            grid-column-start: 3;
+            grid-column-start: 2;
             height: 100%;
+            border-left: solid 1px black;
         }
     }
   }
