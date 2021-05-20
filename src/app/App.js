@@ -53,7 +53,7 @@ function App() {
             <SudokuBoard />
           </div>
           <div className="simulation-controls-container">
-            <label>Run output</label>
+            <label>This is a test</label>
           </div>
         </div>
         <div className="interaction-container">
@@ -66,16 +66,20 @@ function App() {
             </Tabs>
           </AppBar>
           <TabPanel value={value} index={0}>
-            <CodeEditor />
+            {/* <CodeEditor /> */}
+            <Docs />
           </TabPanel>
           <TabPanel value={value} index={1}>
+            {/* <Docs /> */}
             <Docs />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <Leaderboard />
+            {/* <Leaderboard /> */}
+            <Docs />
           </TabPanel>
           <TabPanel value={value} index={3}>
-            <About />
+            {/* <About /> */}
+            <Docs />
           </TabPanel>
         </div>
       </div>
