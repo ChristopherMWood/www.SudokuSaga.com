@@ -4,7 +4,7 @@ import 'components/codeEditor/index.scss';
 
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-github";
-
+import "ace-builds/src-noconflict/theme-solarized_dark"
 
 let defaultCode = 
 `/*
@@ -22,41 +22,67 @@ let sudoku = (function () {
 }());`;
 
 class CodeEditor extends React.Component {
-    constructor(props) {
-        super(props)
-        this.code = defaultCode;
+    constructor() {
+        super();
         this.state = {
-            code: defaultCode
+            theme: "solarized_dark",
+            fontSize: "12px"
         }
+
+        this.fontSizedChanged = this.fontSizedChanged.bind(this);
+        this.themeChanged = this.themeChanged.bind(this);
+        this.runCode = this.runCode.bind(this);
+    }
+
+    runCode(event) {
+
+    }
+
+    fontSizedChanged(event) {
+        this.setState({
+            fontSize: event.target.value
+        });
+    }
+
+    themeChanged(event) {
+        this.setState({
+            theme: event.target.value
+        });
     }
 
     onChange(newValue) {
-        // this.setState({
-        //     code: newValue
-        // });
-    }
-    
-    loadAndRun() {
-        // document.getElementById('customScript').html('<script>' + this.code + '<\/script>');
-        //$('#customScript').html('<script>' + code + '<\/script>');
+        console.log("change", newValue);
     }
 
     render() {
         return (
             <div className="editor-view-container">
                 <div className="editor-controls">
-                    <button onClick={this.loadAndRun}>Run Code</button>
+                    <button onClick={this.runCode}>Run</button>
+                    <select onChange={this.fontSizedChanged} name="font-size" id="font-size">
+                        <option value="12px">12px</option>
+                        <option value="16px">16px</option>
+                        <option value="18px">18px</option>
+                        <option value="24px">24px</option>
+                    </select>
+
+                    <select onChange={this.themeChanged} name="theme" id="theme">
+                        <option value="solarized_dark">Solarized Dark</option>
+                        <option value="github">Github</option>
+                    </select>
                 </div>
                 <div className="code-container">
                     <AceEditor
                         defaultValue={defaultCode}
                         mode="javascript"
+                        theme={this.state.theme}
+                        fontSize={this.state.fontSize}
+                        // height="inherit"
                         onChange={this.onChange}
                         name="code_editor"
                         editorProps={{ $blockScrolling: true }}
                     />
                 </div>
-                <script>{defaultCode}</script>
             </div>
         );
     }
