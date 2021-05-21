@@ -26,16 +26,27 @@ class CodeEditor extends React.Component {
         super();
         this.state = {
             theme: "solarized_dark",
-            fontSize: "12px"
+            fontSize: "12px",
+            code: defaultCode
         }
 
         this.fontSizedChanged = this.fontSizedChanged.bind(this);
         this.themeChanged = this.themeChanged.bind(this);
         this.runCode = this.runCode.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     runCode(event) {
+        let userLoadedScript = document.getElementById("user-code");
+        
+        if (userLoadedScript) {
+            userLoadedScript.remove();
+        }
 
+        const template = document.createElement('script');
+        template.id = "user-code";
+        template.innerHTML = this.state.code;
+        document.body.append(template);
     }
 
     fontSizedChanged(event) {
@@ -51,7 +62,9 @@ class CodeEditor extends React.Component {
     }
 
     onChange(newValue) {
-        console.log("change", newValue);
+        this.setState({
+            code: newValue
+        });
     }
 
     render() {
