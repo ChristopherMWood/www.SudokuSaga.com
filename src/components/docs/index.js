@@ -14,6 +14,15 @@ class Docs extends React.Component {
     render() {
         return (
             <div className="tab-content">
+                <h2>How to</h2>
+                <p>
+                    The step call in the example code is called over and over based on your run settings.
+                    Create as many helper function, variables and local states as you want and add your 
+                    logic in the step function.
+                </p>
+                <p>
+                    Note: If the step function is called 
+                </p>
                 <div className="api-endpoint">
                     <h3>Get Row</h3>
                     <p>

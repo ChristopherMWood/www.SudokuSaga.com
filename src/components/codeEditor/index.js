@@ -58,7 +58,7 @@ class CodeEditor extends React.Component {
         template.innerHTML = this.state.code;
         document.body.append(template);
 
-        window.sudokuSolution.iteration();
+        window.sudokuSolution.step();
     }
 
     fontSizedChanged(event) {
