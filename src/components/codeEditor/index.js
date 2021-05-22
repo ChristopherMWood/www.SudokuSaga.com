@@ -1,33 +1,43 @@
 import React from 'react';
 import AceEditor from "react-ace";
+import Cookies from 'universal-cookie';
 import "ace-builds/webpack-resolver";
 import 'components/codeEditor/index.scss';
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/theme-solarized_dark"
 
+const cookies = new Cookies();
+
 let defaultCode = 
 `/*
-    Read the docs, write your algorithm and see where
-    you stack up against others
+Read the docs and create your solution
 */
-let sudoku = (function () {
-    let saga = {};
-    
-    saga.iteration = function () {
-        //This code runs every step
+sudokuSolution = (function () {
+    let solution = {};
+
+    solution.step = function () {
+        //This code is called every step when run
     };
-    
-    return saga;
+
+    return solution;
 }());`;
 
 class CodeEditor extends React.Component {
     constructor() {
         super();
+
+        let cookieCode = cookies.get('userCode')
+        console.log(cookieCode);
+
+        if (!cookieCode) {
+            cookieCode = defaultCode;
+        }
+
         this.state = {
             theme: "solarized_dark",
             fontSize: "12px",
-            code: defaultCode
+            code: cookieCode
         }
 
         this.fontSizedChanged = this.fontSizedChanged.bind(this);
@@ -47,6 +57,8 @@ class CodeEditor extends React.Component {
         template.id = "user-code";
         template.innerHTML = this.state.code;
         document.body.append(template);
+
+        window.sudokuSolution.iteration();
     }
 
     fontSizedChanged(event) {
@@ -65,6 +77,8 @@ class CodeEditor extends React.Component {
         this.setState({
             code: newValue
         });
+
+        cookies.set('userCode', newValue, { path: '/' });
     }
 
     render() {
@@ -86,7 +100,7 @@ class CodeEditor extends React.Component {
                 </div>
                 <div className="code-container">
                     <AceEditor
-                        defaultValue={defaultCode}
+                        defaultValue={this.state.code}
                         mode="javascript"
                         theme={this.state.theme}
                         fontSize={this.state.fontSize}

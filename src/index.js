@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import './global.scss';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
-import Api from 'api.js'
 import { Provider } from 'react-redux'
+import BoardApi from 'api.js'
 import store from './store/index'
 window.store = store
-
-window.Api = new Api(store);
+window.board = new BoardApi()
 
 ReactDOM.render(
   <React.StrictMode>
