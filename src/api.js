@@ -1,5 +1,10 @@
 class API {
+    constructor() {
+        this.blockTime = 1000;
+    }
+
     SetCell(section, cell, value) {
+
         if (!value) {
             value = ""
         }
@@ -12,6 +17,8 @@ class API {
                 value: value
             }
         });
+
+        setTimeout(function(){}, this.blockTime);
     }
 
     GetSection(section) {
@@ -26,6 +33,15 @@ class API {
                 });
             }
         });
+
+        window.store.dispatch({
+            type: "GET_SECTION",
+            payload: { 
+                section: section
+            }
+        });
+
+        setTimeout(function(){}, this.blockTime);
 
         return sectionData;
     }
@@ -59,10 +75,12 @@ class API {
             }
         });
 
+        setTimeout(function(){}, this.blockTime);
+
         return rowData;
     }
 
-    GetColumn(column) {
+    async GetColumn(column) {
         let columnData = [];
 
         let columnOptions = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
@@ -91,7 +109,13 @@ class API {
             }
         });
 
+        await this.sleep(this.blockTime);
+        
         return columnData;
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
  }
 

@@ -3,9 +3,11 @@ $medium: 768px;
 $large: 992px;
 $xlarge: 1200px;
 
-$primary-color: white;
-$secondary-color: purple;
+$primary-color: #002b36;
+$secondary-color: #0b5366;
+$site-font: 'Open Sans', sans-serif;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
 @import './index.scss';
 @import './app/App.scss';
 @import './components/codeEditor/index.scss';

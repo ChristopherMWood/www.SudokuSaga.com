@@ -44,9 +44,9 @@ function App() {
 
   return (
     <div className="app">
-      <div className="site-hçeader">
+      <header className="site-header">
         <h2>Sudoku Saga</h2>
-      </div>
+      </header>
       <div className="board-container">
         <SudokuBoard />
       </div>
@@ -54,7 +54,7 @@ function App() {
         <label>This is a test</label>
       </div>
       <div className="interaction-container">
-        <AppBar position="static" color="default" >
+        <AppBar position="static" color="default">
           <Tabs value={value} onChange={handleChange}>
             <Tab label="<> Code" {...a11yProps(0)} />
             <Tab label="Docs" {...a11yProps(1)} />

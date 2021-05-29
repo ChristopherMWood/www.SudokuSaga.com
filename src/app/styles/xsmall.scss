@@ -3,12 +3,15 @@
   flex-direction: column;
 
   .site-header {
-    padding: 10px 0px;
-    border-bottom: solid 1px black;
-    
+    background-color: $primary-color;
+    vertical-align: middle;
+
     h2 {
-      margin: 0px 0px 0px 20px;
+      margin: 0px 0px 0px 30px;
       text-align: left;
+      height: 50px;
+      line-height: 50px;
+      color: white;
     }
   }
   
@@ -26,5 +29,12 @@
     margin: 0;
     padding: 0;
     height: 100%;
+
+    .tab-content {
+      margin: 0px 50px;
+      padding-bottom: 50px;
+      font-family: $site-font;
+      color: white;
+    }
   }
 }

@@ -28,6 +28,7 @@ class CodeEditor extends React.Component {
         super();
 
         let cookieCode = cookies.get('userCode')
+
         console.log(cookieCode);
 
         if (!cookieCode) {
@@ -47,18 +48,27 @@ class CodeEditor extends React.Component {
     }
 
     runCode(event) {
-        let userLoadedScript = document.getElementById("user-code");
-        
-        if (userLoadedScript) {
-            userLoadedScript.remove();
+        let gameWon = false;
+
+        if (!gameWon) {
+            try {
+                let userLoadedScript = document.getElementById("user-code");
+                
+                if (userLoadedScript) {
+                    userLoadedScript.remove();
+                }
+
+                const template = document.createElement('script');
+                template.id = "user-code";
+                template.innerHTML = this.state.code;
+                document.body.append(template);
+
+                window.sudokuSolution.step();
+            }
+            catch (error) {
+                console.log(error.message);
+            }
         }
-
-        const template = document.createElement('script');
-        template.id = "user-code";
-        template.innerHTML = this.state.code;
-        document.body.append(template);
-
-        window.sudokuSolution.step();
     }
 
     fontSizedChanged(event) {

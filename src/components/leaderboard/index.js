@@ -3,7 +3,9 @@ import React from 'react';
 class Leaderboard extends React.Component {
     render() {
         return (
-            <label>Leaderboard</label>
+            <div className="tab-content">
+                <label>Leaderboard</label>
+            </div>
         );
     }
 }
