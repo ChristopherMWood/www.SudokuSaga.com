@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.scss';
 
 class SudokuCell extends React.Component {
     constructor(props) {

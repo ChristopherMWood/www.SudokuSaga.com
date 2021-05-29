@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.scss';
 // import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 class Docs extends React.Component {

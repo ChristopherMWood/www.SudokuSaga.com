@@ -1,6 +1,7 @@
 import React from 'react';
 import SudokuSection from 'components/sudokuSection';
 import { connect } from 'react-redux'
+import './styles.scss';
 
 class SudokuBoard extends React.Component {
     constructor(props) {

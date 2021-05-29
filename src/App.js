@@ -2,7 +2,6 @@ import React from "react";
 import SudokuBoard from 'components/sudokuBoard';
 import CodeEditor from 'components/codeEditor';
 import Docs from 'components/docs';
-import Leaderboard from 'components/leaderboard';
 import About from 'components/about';
 
 import Typography from "@material-ui/core/Typography";
@@ -58,8 +57,7 @@ function App() {
           <Tabs value={value} onChange={handleChange}>
             <Tab label="<> Code" {...a11yProps(0)} />
             <Tab label="Docs" {...a11yProps(1)} />
-            <Tab label="Leaderboard" {...a11yProps(2)} />
-            <Tab label="About" {...a11yProps(3)} />
+            <Tab label="About" {...a11yProps(2)} />
           </Tabs>
         </AppBar>
         <div className="scrollable-contents">
@@ -70,9 +68,6 @@ function App() {
             <Docs />
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <Leaderboard />
-          </TabPanel>
-          <TabPanel value={value} index={3}>
             <About />
           </TabPanel>
         </div>

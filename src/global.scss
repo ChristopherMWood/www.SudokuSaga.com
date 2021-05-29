@@ -8,10 +8,21 @@ $secondary-color: #0b5366;
 $site-font: 'Open Sans', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
-@import './index.scss';
-@import './app/App.scss';
-@import './components/codeEditor/index.scss';
-@import './components/sudokuBoard/index.scss';
-@import './components/sudokuCell/index.scss';
-@import './components/sudokuSection/index.scss';
-@import './components/docs/index.scss';
+
+@import './styles/xsmall.scss';
+
+@media (min-width: $small) {
+  @import './styles/small.scss';
+}
+
+@media (min-width: $medium) {
+  @import './styles/medium.scss';
+}
+
+@media (min-width: $large) {
+  @import './styles/large.scss';
+}
+
+@media (min-width: $large) {
+  @import './styles/xlarge.scss';
+}

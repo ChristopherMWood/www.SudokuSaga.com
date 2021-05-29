@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './global.scss';
-import App from './app/App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
-import BoardApi from 'api.js'
+import BoardApi from './domain/api'
 import store from './store/index'
 window.store = store
 window.board = new BoardApi()
