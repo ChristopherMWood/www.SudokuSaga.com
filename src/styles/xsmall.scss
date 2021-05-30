@@ -36,6 +36,41 @@ code {
   
   .board-container {
     padding: 20px;
+    background-color: black;
+
+    .board-selection-container {
+      color: white;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+
+      label {
+        margin-right: 5px;
+      }
+    }
+
+    .board-controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+
+      button {
+        height: 30px;
+        width: 30px;
+        margin-right: 10px;
+      }
+
+      .speed-controls {
+        display: flex;
+        flex-direction: column;
+        color: white;
+      }
+
+      .push {
+        margin-left: auto;
+        margin-right: 0px;
+      }
+    }
   }
 
   .simulation-controls-container {

@@ -95,14 +95,12 @@ class CodeEditor extends React.Component {
         return (
             <div className="editor-view-container">
                 <div className="editor-controls">
-                    <button onClick={this.runCode}>Run</button>
                     <select onChange={this.fontSizedChanged} name="font-size" id="font-size">
                         <option value="12px">12px</option>
                         <option value="16px">16px</option>
                         <option value="18px">18px</option>
                         <option value="24px">24px</option>
                     </select>
-
                     <select onChange={this.themeChanged} name="theme" id="theme">
                         <option value="solarized_dark">Solarized Dark</option>
                         <option value="github">Github</option>
