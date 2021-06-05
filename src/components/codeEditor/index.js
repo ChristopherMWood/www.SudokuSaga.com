@@ -50,25 +50,28 @@ class CodeEditor extends React.Component {
     runCode(event) {
         let gameWon = false;
 
-        if (!gameWon) {
-            try {
-                let userLoadedScript = document.getElementById("user-code");
-                
-                if (userLoadedScript) {
-                    userLoadedScript.remove();
-                }
-
-                const template = document.createElement('script');
-                template.id = "user-code";
-                template.innerHTML = this.state.code;
-                document.body.append(template);
-
-                window.sudokuSolution.step();
+        try {
+            let userLoadedScript = document.getElementById("user-code");
+            
+            if (userLoadedScript) {
+                userLoadedScript.remove();
             }
-            catch (error) {
-                console.log(error.message);
-            }
+
+            const template = document.createElement('script');
+            template.id = "user-code";
+            template.innerHTML = this.state.code;
+            document.body.append(template);
         }
+        catch (error) {
+            console.log(error.message);
+            return;
+        }
+        
+        var delayInMilliseconds = 500;
+
+        setInterval(function() {
+            window.sudokuSolution.step();
+        }, delayInMilliseconds);
     }
 
     fontSizedChanged(event) {
