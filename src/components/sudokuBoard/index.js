@@ -3,22 +3,13 @@ import SudokuSection from 'components/sudokuSection';
 import { connect } from 'react-redux'
 import './styles.scss';
 
-class SudokuBoard extends React.Component {
-    constructor(props) {
-        super(props);
-            this.state = {
-            sudokuBoard: props.sudokuBoard
-        };
-    }
-
-    render() {
-        return (
-        <div className="sudoku-board">
-            {this.state.sudokuBoard.sections.map((section, i) => {
-                return <SudokuSection key={i} section={section} />;
-            })}
-        </div>);
-    }
+function SudokuBoard(props) {
+    return (
+    <div className="sudoku-board">
+        {props.sudokuBoard.sections.map((section, i) => {
+            return <SudokuSection key={i} section={section} />;
+        })}
+    </div>);
 }
 
 const mapStateToProps = state => {

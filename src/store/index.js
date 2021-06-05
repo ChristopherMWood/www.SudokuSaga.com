@@ -31,7 +31,15 @@ class Board {
     }
 }
 
-const reducer = (state = GetInitialState(easyBoard), action) => {
+const initialState = {
+    selectedLevel: 'easy',
+    gameWon: false,
+    playing: false,
+    currentStep: 0,
+    sudokuBoard: new Board(easyBoard)
+}
+
+const reducer = (state = initialState, action) => {
     if (action.type === 'SET_CELL') {
         return SetCell(state, action);
     }
@@ -49,26 +57,7 @@ const reducer = (state = GetInitialState(easyBoard), action) => {
     }
 
     if (action.type === 'CHANGE_BOARD') {
-        let board = action.payload.board;
-        let difficultyBoard;
-
-        if (board === 'easy') {
-            difficultyBoard = easyBoard;
-        } else if (board === 'medium') {
-            difficultyBoard = mediumBoard;
-        } else if (board === 'hard') {
-            difficultyBoard = hardBoard;
-        }
-
-        let newBoard = new Board(difficultyBoard)
-        
-        return Object.assign({}, state, {
-            sudokuBoard: Object.assign({}, state.sudokuBoard, {
-                sections: newBoard.sections
-            })
-        })
-
-        // return Object.assign({}, state, GetInitialState(difficultyBoard))
+        return ResetBoardToLevel(state, action.payload.board);
     }
 
     if (action.type === 'PLAY_PAUSE') {
@@ -94,19 +83,39 @@ const reducer = (state = GetInitialState(easyBoard), action) => {
     }
     
     if (action.type === 'RESET_BOARD') {
-        return Object.assign({}, state, GetInitialState(hardBoard))
+        return ResetBoardToLevel(state, state.selectedLevel);
     }
 
     return state
 }
 
-function GetInitialState(board) {
-    return {
+function ResetBoardToLevel(state, level) {
+    let newBoard;
+
+    if (level === 'easy') {
+        newBoard = new Board(easyBoard);
+    } else if (level === 'medium') {
+        newBoard = new Board(mediumBoard);
+    } else if (level === 'hard') {
+        newBoard = new Board(hardBoard);
+    }
+
+    return Object.assign({}, state, {
+        selectedLevel: level,
         gameWon: false,
         playing: false,
         currentStep: 0,
-        sudokuBoard: new Board(board)
-    }
+        sudokuBoard: {
+            sections: state.sudokuBoard.sections.map((section, sectionIndex) => {
+                section.cells = section.cells.map((cell, cellIndex) => {
+                    cell.value = newBoard.sections[sectionIndex].cells[cellIndex].value;
+                    cell.state = "none";
+                    return cell;
+                })
+                return section;
+            })
+        }
+    });
 }
 
 function SetCell(state, action) {

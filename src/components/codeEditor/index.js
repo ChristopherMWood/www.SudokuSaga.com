@@ -48,8 +48,6 @@ class CodeEditor extends React.Component {
     }
 
     runCode(event) {
-        let gameWon = false;
-
         try {
             let userLoadedScript = document.getElementById("user-code");
             
