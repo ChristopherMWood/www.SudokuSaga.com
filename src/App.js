@@ -1,5 +1,6 @@
 import React from "react";
 import SudokuBoard from 'components/sudokuBoard';
+import SimulatorControls from 'components/simulatorControls';
 import CodeEditor from 'components/codeEditor';
 import Docs from 'components/docs';
 import About from 'components/about';
@@ -34,32 +35,11 @@ function TabPanel(props) {
   );
 }
 
-function changeBoard() {
-  
-}
-
 function App() {
   const [value, setValue] = React.useState(0);
-  const [stepSpeed, setStepSpeed] = React.useState(500);
-  const [paused, setPausedState] = React.useState(true);
-
+  
   function handleChange(event, newValue) {
     setValue(newValue);
-  }
-
-  function onPlayPausePressed() {
-    setPausedState(!paused);
-  }
-
-  function changeStepSpeed(event) {
-    setStepSpeed(event.target.value);
-  }
-
-
-  let playPauseButtonClass = "fa-play";
-
-  if (!paused) {
-    playPauseButtonClass = "fa-pause";
   }
 
   return (
@@ -69,24 +49,7 @@ function App() {
       </header>
       <div className="board-container">
         <SudokuBoard />
-        <div className="board-selection-container">
-          <label>Difficulty:</label>             
-          <select onChange={changeBoard} name="board-difficulty" id="board-difficulty">
-              <option value="easy">Easy</option>
-              <option value="easy">Medium</option>
-              <option value="easy">Hard</option>
-          </select>
-        </div>
-        <div className="board-controls">
-          <button onClick={onPlayPausePressed} className="btn left-button"><i className={"fa " + playPauseButtonClass} title=""></i></button>
-          <button className="btn"><i className="fa fa-step-backward" title="Step back"></i></button>
-          <button className="btn"><i className="fa fa-step-forward" title="Step forward"></i></button>
-          <div className="speed-controls">
-            <label>{"Step Speed: " + stepSpeed + "ms"}</label>
-            <input onChange={changeStepSpeed} type="range" min="1" max="2500" value={stepSpeed}></input>
-          </div>
-          <button className="btn push"><i className="fa fa-undo" title="Reset board"></i></button>
-        </div>
+        <SimulatorControls />
       </div>
       <div className="simulation-controls-container">
       </div>

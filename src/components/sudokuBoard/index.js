@@ -23,6 +23,6 @@ class SudokuBoard extends React.Component {
 
 const mapStateToProps = state => {
     return { sudokuBoard: state.sudokuBoard }
-  }
+}
 
 export default connect(mapStateToProps)(SudokuBoard);
