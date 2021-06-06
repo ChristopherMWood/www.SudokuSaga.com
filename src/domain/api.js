@@ -17,11 +17,13 @@ class API {
                 value: value
             }
         });
-
-        setTimeout(function(){}, this.blockTime);
     }
 
     GetSection(section) {
+        if (section < 0 || section > 8) {
+            return null;
+        }
+
         let sectionData = [];
 
         const state = window.store.getState();
@@ -41,12 +43,14 @@ class API {
             }
         });
 
-        setTimeout(function(){}, this.blockTime);
-
         return sectionData;
     }
 
     GetRow(row) {
+        if (row < 0 || row > 8) {
+            return null;
+        }
+
         let rowData = [];
 
         let rowOptions = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
@@ -75,12 +79,14 @@ class API {
             }
         });
 
-        setTimeout(function(){}, this.blockTime);
-
         return rowData;
     }
 
     async GetColumn(column) {
+        if (column < 0 || column > 8) {
+            return null;
+        }
+
         let columnData = [];
 
         let columnOptions = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
@@ -109,8 +115,6 @@ class API {
             }
         });
 
-        await this.sleep(this.blockTime);
-        
         return columnData;
     }
 

@@ -102,7 +102,8 @@ const reducer = (state = initialState, action) => {
             }
     
             const runInterval = setInterval(function() {
-                window.store.dispatch({type: "STEP_FORWARD"});
+                window.sudokuSolution.step();
+                window.store.dispatch({type: "STEP_TAKEN"});
             }, stepSpeed);
 
             return Object.assign({}, state, {
@@ -118,7 +119,10 @@ const reducer = (state = initialState, action) => {
 
     if (action.type === 'STEP_FORWARD') {
         window.sudokuSolution.step();
+        // window.store.dispatch({type: "STEP_TAKEN"});
+    }
 
+    if (action.type === 'STEP_TAKEN') {
         return Object.assign({}, state, {
             ...state,
             runMetadata: {
