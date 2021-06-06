@@ -77,7 +77,7 @@ const mapStateToProps = state => {
     return { 
         gameWon: state.gameWon,
         playing: state.playing,
-        currentStep: state.currentStep
+        currentStep: state.runMetadata.currentStep
     }
 }
 

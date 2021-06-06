@@ -2,6 +2,9 @@ import { createStore } from 'redux'
 import easyBoard from 'domain/boards/easyBoard'
 import mediumBoard from 'domain/boards/mediumBoard'
 import hardBoard from 'domain/boards/hardBoard'
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class Cell {
     constructor(value) {
@@ -35,7 +38,16 @@ const initialState = {
     selectedLevel: 'easy',
     gameWon: false,
     playing: false,
-    currentStep: 0,
+    runInterval: null,
+    runMetadata: {
+        currentStep: 0,
+        calls: {
+            setCell: 0,
+            getSection: 0,
+            getRow: 0,
+            getColumn: 0
+        }
+    },
     sudokuBoard: new Board(easyBoard)
 }
 
@@ -62,14 +74,40 @@ const reducer = (state = initialState, action) => {
 
     if (action.type === 'PLAY_PAUSE') {
         if (state.playing) {
+            clearInterval(state.runInterval);
+
             return Object.assign({}, state, {
-                playing: false
+                playing: false,
+                runInterval: null
             })
         } else {
             let stepSpeed = action.payload.stepSpeed;
 
+            try {
+                let userLoadedScript = document.getElementById("user-code");
+                
+                if (userLoadedScript) {
+                    userLoadedScript.remove();
+                }
+    
+                const template = document.createElement('script');
+                template.id = "user-code";
+                let cookieCode = cookies.get('userCode')
+                template.innerHTML = cookieCode;
+                document.body.append(template);
+            }
+            catch (error) {
+                console.log(error.message);
+                return;
+            }
+    
+            const runInterval = setInterval(function() {
+                window.store.dispatch({type: "STEP_FORWARD"});
+            }, stepSpeed);
+
             return Object.assign({}, state, {
-                playing: true
+                playing: true,
+                runInterval: runInterval
             })
         }
     }
@@ -79,7 +117,15 @@ const reducer = (state = initialState, action) => {
     }
 
     if (action.type === 'STEP_FORWARD') {
+        window.sudokuSolution.step();
 
+        return Object.assign({}, state, {
+            ...state,
+            runMetadata: {
+                ...state.runMetadata,
+                currentStep: state.runMetadata.currentStep + 1
+            }
+        });
     }
     
     if (action.type === 'RESET_BOARD') {
@@ -104,7 +150,15 @@ function ResetBoardToLevel(state, level) {
         selectedLevel: level,
         gameWon: false,
         playing: false,
-        currentStep: 0,
+        runMetadata: {
+            currentStep: 0,
+            calls: {
+                setCell: 0,
+                getSection: 0,
+                getRow: 0,
+                getColumn: 0
+            }
+        },
         sudokuBoard: {
             sections: state.sudokuBoard.sections.map((section, sectionIndex) => {
                 section.cells = section.cells.map((cell, cellIndex) => {
@@ -120,6 +174,13 @@ function ResetBoardToLevel(state, level) {
 
 function SetCell(state, action) {
     return Object.assign({}, state, {
+        runMetadata: {
+            ...state.runMetadata,
+            calls: {
+                ...state.runMetadata.calls,
+                setCell: state.runMetadata.calls.setCell + 1
+            }
+        },
         sudokuBoard: {
             sections: state.sudokuBoard.sections.map((section, index) => {
                 if (index === action.payload.sectionNum) {
@@ -138,7 +199,14 @@ function SetCell(state, action) {
 }
 
 function GetSection(state, action) {
-    return Object.assign({}, state, {
+    return Object.assign({}, state, {        
+        runMetadata: {
+            ...state.runMetadata,
+            calls: {
+                ...state.runMetadata.calls,
+                getSection: state.runMetadata.calls.getSection + 1
+            }
+        },
         sudokuBoard: {
             sections: state.sudokuBoard.sections.map((section, index) => {
                 if (index === action.payload.sectionNum) {
@@ -167,6 +235,13 @@ function GetRow(state, action) {
     let rowCells = rowOptions[cellDivision];
 
     return Object.assign({}, state, {
+        runMetadata: {
+            ...state.runMetadata,
+            calls: {
+                ...state.runMetadata.calls,
+                getRow: state.runMetadata.calls.getRow + 1
+            }
+        },
         sudokuBoard: {
             sections: state.sudokuBoard.sections.map((section, index) => {
                 if (rowSections.includes(index)) {
@@ -199,6 +274,13 @@ function GetColumn(state, action) {
     let rowCells = columnOptions[cellDivision];
 
     return Object.assign({}, state, {
+        runMetadata: {
+            ...state.runMetadata,
+            calls: {
+                ...state.runMetadata.calls,
+                getColumn: state.runMetadata.calls.getColumn + 1
+            }
+        },
         sudokuBoard: {
             sections: state.sudokuBoard.sections.map((section, index) => {
                 if (rowSections.includes(index)) {

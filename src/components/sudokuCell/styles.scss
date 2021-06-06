@@ -19,10 +19,14 @@
     }
 }
 
-.cell-set {
+.cell-correct {
     background-color: green;
 }
 
+.cell-incorrect {
+    background-color: red;
+}
+
 .cell-viewed {
-    background-color: orange;
+    background-color: orange !important;
 }

@@ -15,8 +15,10 @@ class SudokuCell extends React.Component {
         if (this.state.cell.state === "viewed") {
             displayClasses += "cell-viewed"
         } else if (this.state.cell.state === "set") {
-            displayClasses += "cell-set"
+            displayClasses += "cell-incorrect"
         }
+
+        //track successful vs unsucessful set
 
         return (
             <div className="sudoku-cell">

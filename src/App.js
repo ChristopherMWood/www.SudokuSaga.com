@@ -1,6 +1,7 @@
 import React from "react";
 import SudokuBoard from 'components/sudokuBoard';
 import SimulatorControls from 'components/simulatorControls';
+import SimulationMetadataPanel from 'components/simulationMetadataPanel';
 import CodeEditor from 'components/codeEditor';
 import Docs from 'components/docs';
 import About from 'components/about';
@@ -52,6 +53,7 @@ function App() {
         <SimulatorControls />
       </div>
       <div className="simulation-controls-container">
+        <SimulationMetadataPanel />
       </div>
       <div className="interaction-container">
         <AppBar position="static" color="default">
